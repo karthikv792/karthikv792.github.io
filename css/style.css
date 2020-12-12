@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One");
+@import url("https://fonts.googleapis.com/css?family=Balsamiq+Sans");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
+:root {
+  --font: "Comfortaa";
+  --color2: #e3e7af;
+  --color4: black;
+}
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 0.5rem;
+  background: #ffffff;
+  color: #313639;
+  border: 1px solid #313639;
+  border-radius: 8px;
+  pointer-events: none;
+  font-size: 1.3rem;
+  text-align: left;
+}
+.anytext {
+  font-family: var(--font);
+}
+.anytext1 {
+  color: white;
+}
+
+.playButton {
+  background-color: #2f84ca; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 8px;
+}
+.playButtonHover:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.titles {
+  font-family: var(--font);
+  font-size: 18px;
+}
+
+.year.label {
+  font: 500 196px var(--font);
+  fill: #ddd;
+}
+
+.year.label.active {
+  fill: #aaa;
+}
+.countrymap {
+  stroke: black;
+  fill: white;
+}
+
+.track,
+.track-inset,
+.track-overlay {
+  stroke-linecap: round;
+}
+
+.track {
+  stroke: #000;
+  stroke-opacity: 0.3;
+  stroke-width: 4px;
+}
+
+.track-inset {
+  stroke: #666464;
+  stroke-width: 4px;
+}
+
+.track-overlay {
+  pointer-events: stroke;
+  stroke-width: 4px;
+  stroke: transparent;
+  cursor: crosshair;
+}
+
+.handle {
+  fill: #fff;
+  stroke: #7e7c7c;
+  stroke-opacity: 0.5;
+  stroke-width: 0.5px;
+}
+.ticks {
+  font-size: 5px;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.toolTip {
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  min-width: 50px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  padding: 9px 14px 6px 14px;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 1.3;
+  color: #5b6770;
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.15);
+  font-family: var(--font);
+}
+.toolTip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid white;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -12px;
+}
+.toolTip span {
+  font-weight: 500;
+  color: #081f2c;
+}
+div.label-map {
+  position: absolute;
+  text-align: center;
+  padding: 0.5rem;
+  background: #ffffff;
+  color: grey;
+  border: 1px solid #313639;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: var(--font);
+  z-index: 10;
+}
+.bartooltip {
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  min-width: 50px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  padding: 9px 14px 6px 14px;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 1.3;
+  color: #000;
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.15);
+  font-family: var(--font);
+}
+/* .bartooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid white;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -12px;
+} */
+.hover_highlight {
+  stroke: #437fb5;
+  stroke-width: 4px;
+}
+.bgimage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #fff no-repeat bottom;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.7;
+  fill-opacity: 1;
+}
+.scatterYAxis .tick text {
+  font-family: var(--font);
+}
+.scatterXAxis .tick text {
+  font-family: var(--font);
+}
+/* Inspired from https://codepen.io/braydoncoyer/pen/yLyrWOq */
+.icon-box {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(163, 170, 173);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.icon-box:hover {
+  box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),
+    3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+.incheckboxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  padding: 20px;
+  /* background: #ebf5fc; */
+}
+.incheckboxes label {
+  position: relative;
+  cursor: pointer;
+}
+.incheckboxes label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.incheckboxes label input[type="checkbox"]:checked ~ .icon-box {
+  box-shadow: inset -2px 5px 10px rgb(0, 0, 0),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.incheckboxes label input[type="checkbox"]:checked ~ .icon-box label {
+  font-size: 0.75em;
+}
+.eachrow {
+  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+  box-shadow: 2px 5px rgba(0, 0, 0, 0.25);
+}
+.year.label {
+  font: 500 16px var(--font);
+  fill: #ddd;
+  z-index: 3;
+}
+
+#navi {
+  padding-left: 20px;
+  font: 500 16px var(--font);
+  text-align: center;
+  background-color: white;
+  padding: 14px 16px;
+  z-index: 3;
+  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5%;
+  box-shadow: 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.legendIcons {
+  flex: 1;
+  flex-direction: row;
+  text-align: center;
+  font: 500 16px var(--font);
+  background-color: white;
+  padding: 14px 16px;
+  z-index: 3;
+}
+
+.dropdown {
+  padding-left: 10px;
+  border-radius: 6px;
+  font-family: var(--font);
+}
+
+.barAxis .tick text {
+  font-family: var(--font);
+}
+
+.textclick {
+  text-shadow: 1px 0px 0px var(--color2), 0px 1px 0px var(--color2),
+    2px 1px 0px var(--color2), 1px 2px 0px var(--color2),
+    3px 2px 0px var(--color2);
+}
