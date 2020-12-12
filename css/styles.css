@@ -34,6 +34,13 @@
     font-family: var(--fontone);
     /* font-weight: bold; */
 }
+.blink_me {
+    animation: blinker 3s linear infinite;
+  }
+  
+  @keyframes blinker {  
+    50% { opacity: 0; }
+  }
 /* .titles::before{
     content: " ";
     position: absolute;
