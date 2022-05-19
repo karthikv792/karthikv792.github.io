@@ -3,9 +3,11 @@
     <meta charset='utf-8'>
     <title>KV's Personal Website</title>
     <link rel='stylesheet' href='css/styles.css'>
+<!--    <link rel='stylesheet' href='css/style_2.scss'>-->
     <script src="scripts/jquery-3.6.0.min.js"></script>
     <script src='https://d3js.org/d3.v5.min.js'></script>
   <script src="scripts/parallax.min.js"></script>
+    <script src="scripts/txtrotate.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMTF7Z04GB"></script>
 <script>
@@ -21,13 +23,15 @@ gtag('config', 'G-CMTF7Z04GB');
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 <!-- JS, Popper.js, and jQuery -->
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
+
 </head>
 <body>
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="images/bgimage1.jpg">
+
+  <section id="hiWindow" class="parallax-window tmWelcome" data-parallax="scroll" data-image-src="images/bgimage1.jpg">
   <!-- <div class="bgimage"></div> -->
   <div class="container-fluid">
     <div class="row">
@@ -38,7 +42,7 @@ gtag('config', 'G-CMTF7Z04GB');
           <div class="text-center">
             <h2 class="titles1">Hello I'm</h2><h2 class="titles2">Valmeekam Karthik</h2>
             <span class="blink_me">
-            <h2 style="font-family: var(--fontone);font-size: 1rem;color: white;opacity: 0.7;">Scroll down <br>For a crisp tour into my world</h2>
+            <h2 style="font-family: var(--fontone);font-size: 1rem;color: white;opacity: 0.7;">Scroll down <br>For a tour into my world</h2>
             <i class="fas fa-arrow-circle-down" style="color: white;font-size: 1.5rem;opacity: 0.7;"></i>
             </span>
           </div>
@@ -48,7 +52,78 @@ gtag('config', 'G-CMTF7Z04GB');
 
    </div>
 </section>
-<section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="images/jungle.jpg">
+
+  <section id="About" class="parallax-window tmWelcome" data-parallax="scroll" data-image-src="images/water.JPG">
+
+      <!-- NAVBAR stick to top -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light navfont">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.webp" width="50vw" height="50vw" class="d-inline-block align-top" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#hiWindow">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#About">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Learnings">Learnings</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#RandP">Research & Projects</a>
+            </li>
+          </ul>
+                  <div>
+          <!--google scholar icon-->
+          <a href = "mailto: kvalmeek@asu.edu"><img class="m-3" width="30vw" height="30vw" src="https://img.icons8.com/ios-filled/50/000000/new-post.png"/></a>
+          <a href="https://scholar.google.com/citations?user=&user=CrYLDt4AAAAJ" target="_blank"><svg class="iconn m-3" width="2.5vw" height="2.5vw" viewBox="0 0 24 24"><path d="M 11 4 L 3 9 L 8.4921875 9 C 8.4715892 9.0754986 8.4383718 9.1441171 8.421875 9.2226562 C 8.375875 9.4646562 8.3398437 9.7308125 8.3398438 10.007812 C 8.3398438 13.578812 11.990234 13.175781 11.990234 13.175781 L 11.990234 14.085938 C 11.990234 14.454937 12.47425 14.327172 12.53125 15.076172 C 12.28925 15.076172 7.4746094 14.937547 7.4746094 18.185547 C 7.4746094 21.445547 11.724609 21.285156 11.724609 21.285156 C 11.724609 21.285156 16.632812 21.504656 16.632812 17.472656 C 16.634813 15.063656 13.822266 14.2795 13.822266 13.3125 C 13.822266 12.3335 15.941406 12.045906 15.941406 9.7539062 C 15.941406 8.7519062 15.872828 8.03825 15.423828 7.53125 C 15.388828 7.49625 15.366031 7.4722188 15.332031 7.4492188 C 15.324304 7.4420199 15.31448 7.4367774 15.306641 7.4296875 L 15.429688 7.4296875 L 17.5 5.8769531 L 17.5 8 A 0.50005 0.50005 0 0 0 17.511719 8.1152344 A 1.0001 1.0001 0 0 0 17 9 L 17 10 A 1.0001 1.0001 0 1 0 19 10 L 19 9 A 1.0001 1.0001 0 0 0 18.488281 8.1152344 A 0.50005 0.50005 0 0 0 18.5 8 L 18.5 5.125 L 20 4 L 11 4 z M 11.691406 7.0527344 C 11.979219 7.0397031 12.268922 7.109625 12.544922 7.265625 C 12.751922 7.369625 12.946141 7.518125 13.119141 7.703125 C 13.476141 8.060125 13.7765 8.5784531 13.9375 9.1894531 C 14.3175 10.640453 13.823828 12.035781 12.798828 12.300781 C 11.784828 12.587781 10.654672 11.641172 10.263672 10.201172 C 10.090672 9.4991719 10.114547 8.8202969 10.310547 8.2792969 C 10.312395 8.2723193 10.316443 8.2666961 10.318359 8.2597656 C 10.321722 8.2581149 10.32682 8.253536 10.330078 8.2519531 C 10.386262 8.0380596 10.478099 7.8461668 10.589844 7.6875 C 10.795388 7.3872165 11.066477 7.1838352 11.404297 7.09375 C 11.499297 7.07075 11.595469 7.0570781 11.691406 7.0527344 z M 12.082031 15.685547 C 13.775031 15.558547 15.216313 16.490813 15.320312 17.757812 C 15.390313 19.013813 14.087812 20.131094 12.382812 20.246094 C 10.689813 20.361094 9.2274844 19.441547 9.1464844 18.185547 C 9.0654844 16.918547 10.377031 15.812547 12.082031 15.685547 z"/></svg></a>
+          <a href="https://www.github.com/karthikv792" target="__blank"><svg viewBox="0 0 24 24" class="iconn m-3" width="2.5vw" height="2.5vw"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg></a>
+          <a href="https://www.linkedin.com/in/karthikv792/" target="__blank">     <svg viewBox="0 0 24 24" class="iconn m-3" width="2.5vw" height="2.5vw"><path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"></path></svg></a>
+          <a href="https://twitter.com/karthikv792" target="__blank">    <svg viewBox="0 0 24 24" class="iconn m-3" width="2.5vw" height="2.5vw"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg></a>
+          <a href="https://www.instagram.com/thephotopoet_792/"><svg class="iconn m-1" viewBox="0 0 24 24" width="2.5vw" height="2.5vw">    <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z"/></svg></a>
+      </div>
+        </div>
+      </nav>
+    <div class="container justify-content-center">
+        <div class="jumbotron text-center">
+            <h2> <a style="font-family: var(--fontthree); font-weight: bold">I am a</a>
+  <span
+     class="txt-rotate"
+     style="font-family: var(--fonttwo); font-weight: bold"
+     data-period="1000"
+     data-rotate='[ "Student!","Researcher!","Programmer!","Storyteller!" ]'></span></h2>
+            <p class="pcont">
+
+                I was born in <a href="">Hyderabad, India</a> but I grew up in two quite opposite places (weather-wise); <a href="">Addis Ababa, Ethiopia </a> (from K.G. to 5th Std) and <a href="">Ibra, Oman </a>(5th to 10th Std).
+                I have always loved stories and thought of myself as a storyteller.
+                After my frivolous attempt at JEE, I joined <a href="">Vellore Institute of Technology</a> to learn and tell stories about Computer Science and Engineering.
+                <br><br>
+                During my Masters at Arizona State University, I realized that rigorously formalized ideas are the best stories to tell!<br>
+                Hence I opted to pursue PhD under <a href="">Prof. Subbarao Kambhampati</a>. My research interests lie in the area of Human in the loop AI and Reinforcement Learning.
+                <br><br>
+                In my free time, I write screenplays, dance, learn photography, play my keyboard and listen to a wide variety of music ranging from heavy metal to carnatic ragas.
+
+            </p>
+             <!--<div class="mt-3" style="font-family:var(--fonttwo); font-size: 2rem;">Let's connect through these!!</div>>
+             <-->
+
+
+
+
+        </div>
+    </div>
+  </section>
+
+<section id="Education" class="parallax-window tmWelcome" data-parallax="scroll" data-image-src="images/IMG_6059.jpg">
   <div class="container justify-content-center">
     <div class="row m-5 justify-content-center titlebg">
       <h2 class="titles1 m-3" style="color: black;">Passing through the Academic Jungle</h2>
@@ -58,7 +133,7 @@ gtag('config', 'G-CMTF7Z04GB');
           <div class="row">
           <div class="col-md-4 text-center">
             <h1 class="datetitle mb-3">2021 - Present.</h1>
-            <img class="mt-2" src="images/yochan_icon1.png" style="max-width:80%; object-fit: contain;">
+            <a href="https://yochan-lab.github.io/home/" target="__blank"><img class="mt-2" src="images/yochan_icon1.png"  style="max-width:80%; object-fit: contain;"></a>
           </div>
           <div class="col-md-8">
           <h1 class="display-4">Arizona State University.</h1>
@@ -182,7 +257,7 @@ gtag('config', 'G-CMTF7Z04GB');
     <div class="col"></div>
   </div>
 </section>
-<section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="images/learning.jpg">
+<section id="Learnings" class="parallax-window tmWelcome" data-parallax="scroll" data-image-src="images/learning.jpg">
   <div class="container justify-content-center">
     <div class="row m-5 justify-content-center titlebg">
       <h2 class="titles1 m-3" style="color: black;">Learning - A continuous process</h2>
@@ -215,10 +290,10 @@ gtag('config', 'G-CMTF7Z04GB');
         </div></div>
   </div>
 </section>
-<section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="images/endof.jpg">
+<section id="RandP" class="parallax-window tmWelcome" data-parallax="scroll" data-image-src="images/endof.jpg">
     <div class="container justify-content-center">
     <div class="row m-5 justify-content-center titlebg">
-      <h2 class="titles1 m-3" style="color: black;">At the end of the day...<br>We have to get something done..</h2>
+      <h2 class="titles1 m-3" style="color: black;"> Execution - That's how dreams become reality </h2>
     </div>
     <div class="row">
         <div class="col-md-8"><div class="jumbotron">
@@ -228,13 +303,13 @@ gtag('config', 'G-CMTF7Z04GB');
           </p>
           <hr class="my-4">
 <p ><ul class="pcont">
-  <li><a href="https://github.com/karthikv792/RL-for-Imperfect-Info-Games" target="_blank">Reinforcement Learning for Sequence: An Imperfect Information Board Game</a></li>
-<li><a href="https://github.com/karthikv792/TORCS_SAC_PYTORCH" target="_blank">High Speed Autonomous Drifting using Deep Reinforcement Learning</a></li>
-  <li><a href="https://github.com/karthikv792/NashQ" target="_blank">Implementation and Evaluation of Nash Q Learning</a></li>
-<li><a href="https://github.com/karthikv792/PDDL-parser" target="_blank">Parsing and Writing AI Planning models (represented in <a href="https://planning.wiki/ref/pddl/domain" target="_blank">PDDL)</a> </a></li>
-  <li><a href="https://unrivaled-frangollo-be8400.netlify.app/" target="_blank">VAST 2019 Mini Challenge 1 - Data Visualization</a> </li>
-  <li><a href="https://hopeful-brahmagupta-b552a0.netlify.app/" target="_blank">Paws in Space - Data Visualization</a></li>
-  <li><a href="https://wonderful-zuccutto-9c2fd2.netlify.app/" target="_blank">How to Open in Chess? - Data Visualization</a> </li>
+  <li>Reinforcement Learning for Sequence: An Imperfect Information Board Game <button class="mybutton" onclick="location.href='https://github.com/karthikv792/RL-for-Imperfect-Info-Games'" type="button"> code </button> </li>
+<li>High Speed Autonomous Drifting using Deep Reinforcement Learning <button class="mybutton" onclick="location.href='https://github.com/karthikv792/TORCS_SAC_PYTORCH'" type="button"> code </button></li>
+  <li>Implementation and Evaluation of Nash Q Learning <button class="mybutton" onclick="location.href='https://github.com/karthikv792/NashQ'" type="button"> code </button></li>
+<li>Parsing and Writing AI Planning models (represented in <a href="https://planning.wiki/ref/pddl/domain" target="_blank">PDDL</a>) <button class="mybutton" onclick="location.href='https://github.com/karthikv792/PDDL-parser'" type="button"> code </button></a></li>
+  <li>VAST 2019 Mini Challenge 1 - Data Visualization <button class="mybutton" onclick="location.href='https://unrivaled-frangollo-be8400.netlify.app/'" type="button"> demo </button> </li>
+  <li>Paws in Space - Data Visualization<button class="mybutton" onclick="location.href='https://hopeful-brahmagupta-b552a0.netlify.app/'" type="button"> demo </button></li>
+  <li>How to Open in Chess? - Data Visualization<button class="mybutton" onclick="location.href='https://wonderful-zuccutto-9c2fd2.netlify.app/'" type="button"> demo </button> </li>
 
 </ul></p>
         </div></div>
@@ -262,21 +337,15 @@ gtag('config', 'G-CMTF7Z04GB');
         </div></div>
   </div>
 </section>
-<section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="images/contact.jpg" data-natural-height="50%">
-  <div class="container mt-2 ">
+<section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="images/allineed.JPG" data-natural-height="50%">
+
     <div class="jumbotron justify-content-center text-center">
 
-       <div class="mt-3" style="font-family:var(--fonttwo); font-size: 2rem;">Let's connect through these!!</div>
 
-      <div>
-    <a href="https://www.github.com/karthikv792" target="__blank"><svg viewBox="0 0 24 24" class="iconn m-3"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path></svg>
-    </a> <a href="https://www.linkedin.com/in/karthikv792/" target="__blank">     <svg viewBox="0 0 24 24" class="iconn m-3"><path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"></path></svg>
-    </a> <a href="https://twitter.com/karthikv792" target="__blank">    <svg viewBox="0 0 24 24" class="iconn m-3"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg>
-    </a></div>
-  <div><a style="font-family:var(--fontone);"> *All the background images are captured by me (with the obvious exception of the first one).</a>
+  <div><a style="font-family:var(--fonttwo); font-size: 2.5vw"> *All the background images are captured by me <br>(with the obvious exception of the first one).</a>
   </div>
   </div>
-    </div>
+
     </section>
     <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light navtext">
         <a class="navbar-brand ml-4" href="#"><h2>Valmeekam Karthik.</h2></a>
@@ -307,6 +376,24 @@ gtag('config', 'G-CMTF7Z04GB');
           </div>
         </div>
       </nav> -->
+<script>
+    /* Code for changing active
+            link on Scrolling */
+            $(window).scroll(function () {
+                var distance = $(window).scrollTop();
+                $('.tmWelcome').each(function (i) {
 
+                    if ($(this).position().top
+                        <= distance + 250) {
+
+                            $('.navbar-nav a.active')
+                                .removeClass('active');
+
+                            $('.navbar-nav a').eq(i)
+                                .addClass('active');
+                    }
+                });
+            }).scroll();
+        </script>
 
 </body>
