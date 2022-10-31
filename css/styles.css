@@ -81,6 +81,9 @@ html {
     font-size: 2.25vw !important;
     
 }
+.rotatetext{
+    font-size: 2vw;
+}
 .container-fluid {
   width: 70% !important;
 }
