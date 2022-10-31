@@ -25,6 +25,7 @@ html {
 
     fill: var(--headerC);
 }
+
 .navbar{
     background-color: white;
     color: var(--headerC);
@@ -33,6 +34,7 @@ html {
 .navtext{
     font-family: 'Graduate';
     font-weight: bold;
+    font-size: 2vw;
 }
 .titles1{
     font-family: var(--fontthree);
@@ -79,6 +81,9 @@ html {
     font-size: 2.25vw !important;
     
 }
+.container-fluid {
+  width: 70% !important;
+}
 .jumbotron{
     background-color: rgba(233,236,239,0.9) !important;
 }
@@ -88,6 +93,7 @@ html {
 }
 .lead{
     font-family: var(--fontthree) !important;
+    font-size: 1.2vw !important;
 }
 .titlebg{
     border-radius: 0% 0% 50% 50% / 0% 0% 10% 10%;
