@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Griffy');
 @import url('https://fonts.googleapis.com/css?family=Belanosima');
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Fredoka');
 @import url('https://fonts.googleapis.com/css?family=Graduate');
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 @import url('https://fonts.googleapis.com/css?family=Gloock');
@@ -13,7 +14,7 @@
     --fontone: "Gloock";
     --fonttwo: 'Sacramento';
     --fontthree: 'Gloock';
-    --fontfour: 'Belanosima';
+    --fontfour: 'Fredoka';
     --stan: #bd2031;
     --colorA: #ff0066
 }
@@ -51,8 +52,17 @@ html {
 }
 .pcont{
     font-size: 1.25rem;
-    font-family: var(--fontfour);
-     font-weight: normal;
+    font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.pcont2{
+  font-size: 1.25rem;
+  font-family: var(--fonttwo);
+   font-weight: normal;
 }
 .psmall{
     font-size: 1rem;
@@ -231,6 +241,12 @@ html {
     font-size: 2rem !important;
     
 }
+.datetitle2{
+  font-family: var(--fontthree) !important;  
+  font-weight: 600;
+  font-optical-sizing: auto;
+  font-size:  1rem !important;
+}
 .rotatetext{
     font-size: 2rem;
 }
@@ -238,7 +254,7 @@ html {
   width: 70% !important;
 }
 .jumbotron{
-    background-color: rgba(233,236,239,0.9) !important;
+    background-color: rgba(233,236,239,0.95) !important;
 }
 .display-4{
     font-family: var(--fonttwo) !important;
