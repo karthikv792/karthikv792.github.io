@@ -4,10 +4,18 @@
   <meta charset='utf-8'>
   <title>KV's Personal Website</title>
   <link rel='stylesheet' href='css/styles.css'>
+  <link rel="preload" as="image" href="images/bgimage1.jpg">
+  <link rel="preload" as="image" href="images/water.JPG">
+  <link rel="preload" as="image" href="images/IMG_6059.jpg">
+  <link rel="preload" as="image" href="images/learning.jpg">
+  <link rel="preload" as="image" href="images/endof.jpg">
+  <link rel="preload" as="image" href="images/allineed.JPG">
+  
   <!--    <link rel='stylesheet' href='css/style_2.scss'>-->
   <script src="scripts/jquery-3.6.0.min.js"></script>
   <script src='https://d3js.org/d3.v5.min.js'></script>
   <script src="scripts/parallax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
   <script src="scripts/txtrotate.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMTF7Z04GB"></script>
@@ -34,50 +42,22 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
-
-
+    <script src="scripts/jquery-3.6.0.min.js"></script>
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src="scripts/parallax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <!-- HTML !-->
 
 
 
 <body>
-
-  <section id="hiWindow" class="parallax-window tmWelcome" data-parallax="scroll" data-image-src="images/bgimage1.jpg">
-    <!-- <div class="bgimage"></div> -->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col offset-md-4">
-          <!-- Logo Area -->
-          <!-- Black transparent bg -->
-          <div class="ml-auto mr-0">
-            <div class="text-center">
-              <h3 class="titles1">Hello I'm</h3>
-              <h1 class="titles2">Valmeekam Karthik</h1>
-              <!-- <button class="button-56 ml-auto mr-auto" role="button">CV</button> -->
-              <!--              <button class="button-56 ml-auto mr-auto mb-4" role="button">Click to view my resume</button>-->
-              <span class="blink_me">
-                <h3 style="font-family: var(--fontone);font-size: 1rem;color: white;opacity: 0.7;">Scroll down <br>For a
-                  tour into my world</h3>
-                <i class="fas fa-arrow-circle-down" style="color: white;font-size: 1.5rem;opacity: 0.7;"></i>
-              </span>
-
-
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-  </section>
-
-
-  <section id="About" class="parallax-window tmWelcome" data-parallax="scroll" data-image-src="images/water.JPG">
-
-    <!-- NAVBAR stick to top -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light navfont">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light navfont">
       <a class="navbar-brand" href="#">
-        <img src="images/logo2.png" width="50rem" height="50rem" class="d-inline-block align-top" alt="">
+        <img loading="lazy" src="images/logo2.png" width="50rem" height="50rem" class="d-inline-block align-top" alt="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,7 +87,7 @@
         </ul>
         <div>
           <!--google scholar icon-->
-          <a class="button-6" href="mailto: kvalmeek@asu.edu"><img class="m-2" width="35rem" height="35rem"
+          <a class="button-6" href="mailto: kvalmeek@asu.edu"><img loading="lazy" class="m-2" width="35rem" height="35rem"
               src="https://img.icons8.com/ios-filled/50/000000/new-post.png" /></a>
           <a class="button-6" href="https://scholar.google.com/citations?user=&user=CrYLDt4AAAAJ" target="_blank"><svg
               class="iconn m-2" width="2.5rem" height="2.5rem" viewBox="0 0 24 24">
@@ -140,10 +120,44 @@
         </div>
       </div>
     </nav>
+  <section id="hiWindow" class="parallax-window glass-effect tmWelcome" data-parallax="scroll" data-image-src="images/bgimage1.jpg" loading="lazy">
+    <!-- <div class="bgimage"></div> -->
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col offset-md-4">
+          <!-- Logo Area -->
+          <!-- Black transparent bg -->
+          <div class="ml-auto mr-0">
+            <div class="text-center">
+              <h3 class="titles1">Hello I'm</h3>
+              <h1 class="titles2">Valmeekam Karthik</h1>
+              <!-- <button class="button-56 ml-auto mr-auto" role="button">CV</button> -->
+              <!--              <button class="button-56 ml-auto mr-auto mb-4" role="button">Click to view my resume</button>-->
+              <span class="blink_me">
+                <h3 style="font-family: var(--fontone);font-size: 1rem;color: white;opacity: 0.7;">Scroll down <br>For a
+                  tour into my world</h3>
+                <i class="fas fa-arrow-circle-down" style="color: white;font-size: 1.5rem;opacity: 0.7;"></i>
+              </span>
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+  </section>
+
+
+  <section id="About" class="parallax-window glass-effect tmWelcome" data-parallax="scroll" data-image-src="images/water.JPG" loading="lazy">
+
+    <!-- NAVBAR stick to top -->
+    
     <div class="container-fluid justify-content-center">
       
       <div class="row m-5"></div>
-      <div class="jumbotron text-center">
+      <div class="jumbotron scroll-triggered glass-effect text-center">
         <h2 class="rotatetext"> <a style="font-family: var(--fontthree); font-weight: bold">I am a</a>
           <span class="txt-rotate" style="font-family: var(--fonttwo); font-size: 2.5rem; font-weight: bold"
             data-period="1000" data-rotate='[ "Student!","Researcher!","Programmer!","Storyteller!" ]'></span>
@@ -173,7 +187,7 @@
 
      
       <div class="row m-6"></div>
-        <div class="jumbotron text-left">
+        <div class="jumbotron scroll-triggered glass-effect text-left">
           <h2> <a style="font-family: var(--fontthree); font-weight: bold">News</a></h2>
           <p class="pcont">
             <!-- #A Table with two columns - Date and Content -->
@@ -187,8 +201,8 @@
                 <th style="color: var(--colorA);" class="datetitle2">Sept 23, 2024</th>
                 <th class="pcont"><a
                   href="https://www.arxiv.org/abs/2409.13373">New preprint</a> about OpenAI's o1 
-                  (<img width =25 src="https://img.icons8.com/?size=100&id=46852&format=png&color=000000">) evaluation on PlanBench
-                  is now available on arXiv <img src="images/hot3.png" width="60" class="ml-1">
+                  (<img loading="lazy" width =25 src="https://img.icons8.com/?size=100&id=46852&format=png&color=000000">) evaluation on PlanBench
+                  is now available on arXiv <img loading="lazy" src="images/hot3.png" width="60" class="ml-1">
                   </th>
               </tr>
               <tr></tr>
@@ -199,13 +213,13 @@
             </table>
             <!-- <li class="pcont">
               <a style="color: var(--colorA);">Sept 2024:</a> Our paper <a href="https://arxiv.org/abs/2405.04776"> 
-              "Chain of thoughtlessness? An Analysis of CoT in Planning"</a> got accepted at NeurIPS 2024 <img src="images/hot3.png" width="60" class="m-1">
+              "Chain of thoughtlessness? An Analysis of CoT in Planning"</a> got accepted at NeurIPS 2024 <img loading="lazy" src="images/hot3.png" width="60" class="m-1">
             </li>
             <li class="pcont">
               <a style="color: var(--colorA);">Sept 2024:</a> Our paper on <a
               href="https://www.arxiv.org/abs/2409.13373">"LLMs Still Can't Plan; Can LRMs? A Preliminary
-              Evaluation of OpenAI's o1 on PlanBench"</a> is now available on arXiv <img src="images/hot3.png" width="60" class="ml-1">
-              <img src="images/new5.png" width="70">
+              Evaluation of OpenAI's o1 on PlanBench"</a> is now available on arXiv <img loading="lazy" src="images/hot3.png" width="60" class="ml-1">
+              <img loading="lazy" src="images/new5.png" width="70">
             </li> -->
             
   
@@ -221,18 +235,18 @@
     </div>
   </section>
 
-  <section id="Education" class="parallax-window tmWelcome" data-parallax="scroll" data-image-src="images/IMG_6059.jpg">
+  <section id="Education" class="parallax-window glass-effect tmWelcome" data-parallax="scroll" data-image-src="images/IMG_6059.jpg" loading="lazy">
     <div class="container-fluid justify-content-center">
       <div class="row m-5 justify-content-center titlebg">
         <h2 class="titles1 m-3 text-center" style="color: black;">Passing through the Academic Jungle</h2>
       </div>
       <div class="row m-3">
         <div class="col-md-8">
-          <div class="jumbotron">
+          <div class="jumbotron scroll-triggered glass-effect">
             <div class="row">
               <div class="col-md-4 text-center">
                 <h1 class="datetitle mb-3">2021 - Present.</h1>
-                <a href="https://yochan-lab.github.io/home/" target="__blank"><img class="mt-2"
+                <a href="https://yochan-lab.github.io/home/" target="__blank"><img loading="lazy" class="mt-2"
                     src="images/yochan_icon1.png" style="max-width:80%; object-fit: contain;"></a>
               </div>
               <div class="col-md-8">
@@ -260,11 +274,11 @@
 
         <div class="col"></div>
         <div class="col-md-8">
-          <div class="jumbotron">
+          <div class="jumbotron scroll-triggered glass-effect">
             <div class="row">
               <div class="col-md-4 text-center">
                 <h1 class="datetitle mb-3">2019-2021.</h1>
-                <img class="mt-2" src="images/yochan_icon1.png" style="max-width:80%; object-fit: contain;">
+                <img loading="lazy" class="mt-2" src="images/yochan_icon1.png" style="max-width:80%; object-fit: contain;">
               </div>
               <div class="col-md-8">
                 <h1 class="display-4">Arizona State University.</h1>
@@ -292,12 +306,12 @@
       <div class="row m-3">
 
         <div class="col-md-8">
-          <div class="jumbotron">
+          <div class="jumbotron scroll-triggered glass-effect">
             <div class="row">
               <div class="col-md-4 text-center">
                 <h1 class="datetitle mb-3">2015-2019.</h1>
-                <img class="mt-2 mb-2" src="images/vit.png" style="max-width:40%; object-fit: contain;">
-                <img class="mt-2 mb-2" src="images/codechef.png" style="max-width:60%; object-fit: contain;">
+                <img loading="lazy" class="mt-2 mb-2" src="images/vit.png" style="max-width:40%; object-fit: contain;">
+                <img loading="lazy" class="mt-2 mb-2" src="images/codechef.png" style="max-width:60%; object-fit: contain;">
               </div>
               <div class="col-md-8">
                 <h1 class="display-4"> Vellore Institute Of Technology.</h1>
@@ -320,11 +334,11 @@
       <div class="row m-3">
         <div class="col"></div>
         <div class="col-md-8">
-          <div class="jumbotron">
+          <div class="jumbotron scroll-triggered glass-effect">
             <div class="row">
               <div class="col-md-4 text-center">
                 <h1 class="datetitle mb-3">2013-2015.</h1>
-                <img class="mt-2 mb-4" src="images/narayana.png" style="max-width:80%; object-fit: contain;">
+                <img loading="lazy" class="mt-2 mb-4" src="images/narayana.png" style="max-width:80%; object-fit: contain;">
 
               </div>
               <div class="col-md-8">
@@ -347,11 +361,11 @@
       <div class="row m-3">
 
         <div class="col-md-8">
-          <div class="jumbotron">
+          <div class="jumbotron scroll-triggered glass-effect">
             <div class="row">
               <div class="col-md-4 text-center">
                 <h1 class="datetitle mb-3">2007-2013.</h1>
-                <img class="mt-2" src="images/isi.png" style="max-width:80%; object-fit: contain;">
+                <img loading="lazy" class="mt-2" src="images/isi.png" style="max-width:80%; object-fit: contain;">
               </div>
               <div class="col-md-8">
                 <h1 class="display-4"> Indian School Ibra.</h1>
@@ -371,19 +385,19 @@
       <div class="col"></div>
     </div>
   </section>
-  <section id="Learnings" class="parallax-window tmWelcome" data-parallax="scroll" data-image-src="images/learning.jpg">
+  <section id="Learnings" class="parallax-window glass-effect tmWelcome" data-parallax="scroll" data-image-src="images/learning.jpg" loading="lazy">
     <div class="container-fluid justify-content-center">
       <div class="row m-5 justify-content-center titlebg">
         <h2 class="titles1 m-3 text-center" style="color: black;">Learning - A continuous process</h2>
       </div>
       <div class="row">
         <div class="col">
-          <div class="jumbotron">
+          <div class="jumbotron scroll-triggered glass-effect">
             <!-- <h2 class="titles1 mb-4 text-center" style="color: black;">Experience</h2> -->
             <div class="row">
               <div class="col-md-4 text-center">
                 <h1 class="datetitle mb-4">May - Aug 2024.</h1>
-                <img class="mt-4" src="images/amazon.png" style="max-width:80%; object-fit: contain;">
+                <img loading="lazy" class="mt-4" src="images/amazon.png" style="max-width:80%; object-fit: contain;">
               </div>
               <div class="col-md-8">
                 <h1 class="display-4"> Amazon Science.</h1>
@@ -401,7 +415,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <div class="jumbotron">
+          <div class="jumbotron scroll-triggered glass-effect">
             <h2 class="titles1 text-center" style="color: black;">Skills</h2>
             <table class="table mt-4 table-striped">
               <tr>
@@ -430,20 +444,20 @@
 
 
   </section>
-  <section id="RandP" class="parallax-window tmWelcome" data-parallax="scroll" data-image-src="images/endof.jpg">
+  <section id="RandP" class="parallax-window glass-effect tmWelcome" data-parallax="scroll" data-image-src="images/endof.jpg" loading="lazy">
     <div class="container-fluid justify-content-center">
       <div class="row m-5 justify-content-center titlebg">
         <h2 class="titles1 m-3 text-center" style="color: black;"> Execution - That's how dreams become reality </h2>
       </div>
       <div class="row">
         <div class="col">
-          <div class="jumbotron">
+          <div class="jumbotron scroll-triggered glass-effect">
             <div>
               <h1 class="display-4"> Publications.
                 <div class="d-inline-block">
                   <a class="button-6" href="https://scholar.google.com/citations?user=CrYLDt4AAAAJ&hl=en"
                     target="__blank">
-                    <img width="30" src="https://img.icons8.com/material-outlined/48/000000/google-scholar.png" />
+                    <img loading="lazy" width="30" src="https://img.icons8.com/material-outlined/48/000000/google-scholar.png" />
                   </a>
                 </div>
               </h1>
@@ -455,7 +469,7 @@
             <ol class="pcont">
               <li>
                 <a href=https://www.arxiv.org/abs/2409.13373> LLMs Still Can't Plan; Can LRMs? A Preliminary Evaluation of OpenAI's o1 on PlanBench
-                </a><img src="images/hot3.png" width="60" class="m-1">
+                </a><img loading="lazy" src="images/hot3.png" width="60" class="m-1">
                      <br>
                      <p class="psmall"><u>Karthik Valmeekam</u>*, Kaya Stechly*, Subbarao Kambhampati
                      <br>
@@ -469,7 +483,7 @@
              
                  </li>  
                  <li><a href="https://arxiv.org/abs/2405.04776" target="_blank">Chain of Thoughtlessness? An Analysis of
-                  CoT in Planning </a> <img src="images/new5.png"
+                  CoT in Planning </a> <img loading="lazy" src="images/new5.png"
                   width="70" class="m-1">
                 <br>
                 <p class="psmall">Kaya Stechly*, <u>Karthik Valmeekam</u>*, Subbarao Kambhampati
@@ -480,7 +494,7 @@
               </li>
               <li><a href="https://arxiv.org/abs/2402.01817" target="_blank">LLMs Can't Plan, But Can Help Planning in
                   LLM-Modulo Frameworks </a> 
-                  <!-- <img src="images/new5.png" width="70" class="m-1"> -->
+                  <!-- <img loading="lazy" src="images/new5.png" width="70" class="m-1"> -->
                 <br>
                 <p class="psmall">Subbarao Kambhampati, <u>Karthik Valmeekam</u>, Lin Guan, Kaya Stechly, Mudit Verma,
                   Siddhant Bhambri, Lucas Saldyt, Anil Murthy
@@ -488,7 +502,7 @@
                 </p>
               </li>
               
-              <li><a href="https://arxiv.org/abs/2405.20625" target="_blank">Robust Planning with LLM-Modulo Framework: Case Study in Travel Planning</a> <img src="images/new5.png" width="70" class="m-1">
+              <li><a href="https://arxiv.org/abs/2405.20625" target="_blank">Robust Planning with LLM-Modulo Framework: Case Study in Travel Planning</a> <img loading="lazy" src="images/new5.png" width="70" class="m-1">
               <br>
               <p class="psmall">Atharva Gundawar, Mudit Verma, Lin Guan, Karthik Valmeekam, Siddhant Bhambri, Subbarao Kambhampati
                 <br> <a style="color: var(--colorA);">arXiv Preprint, May 2024.</a>
@@ -587,7 +601,7 @@
 
       <div class="row">
         <div class="col">
-          <div class="jumbotron">
+          <div class="jumbotron scroll-triggered glass-effect">
             <h1 class="display-4">Projects</h1>
             <p class="lead">
               *Get the engine started.*
@@ -595,7 +609,7 @@
             <hr class="my-4">
             <p>
             <ol class="pcont">
-              <li><a href="https://github.com/karthikv792/LLMs-Planning" target="_blank">LLMs for Planning</a> <img
+              <li><a href="https://github.com/karthikv792/LLMs-Planning" target="_blank">LLMs for Planning</a> <img loading="lazy"
                   src="images/hot3.png" width="60" class="m-1"> </li>
               <li><a href="https://github.com/karthikv792/RL-for-Imperfect-Info-Games" target="_blank">Reinforcement
                   Learning for Sequence: An Imperfect Information Board Game </a> </li>
@@ -617,14 +631,18 @@
 
       </div>
   </section>
-  <section id="tmWelcome" class="parallax-window" data-parallax="scroll" data-image-src="images/allineed.JPG"
+  <section id="tmWelcome" class="parallax-window glass-effect" data-parallax="scroll" data-image-src="images/allineed.JPG" loading="lazy"
     data-natural-height="50%">
 
-    <div class="jumbotron justify-content-center text-center">
+    <div class="container-fluid scroll-triggered justify-content-center text-center">
 
-
-      <div><a style="font-family:var(--fonttwo); font-size: 2.5rem"> *All the background images are captured by me
-          <br>(with the obvious exception of the first one).</a>
+      <div class="row m-5"></div>
+      <div class="row m-5">  
+        <div class="col">    
+          <div class="jumbotron"><a style="font-family:var(--fonttwo); font-size: 2.5rem; "> *All the background images are captured by me
+              <br>(with the obvious exception of the first one).</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -676,6 +694,23 @@
         }
       });
     }).scroll();
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray(".scroll-triggered").forEach(function (section) {
+      gsap.fromTo(section, {
+        opacity: 0.8,
+        y: 50
+      }, {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          end: "bottom 60%",
+          scrub: true
+        }
+      });
+    });
   </script>
 
 </body>

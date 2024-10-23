@@ -22,6 +22,20 @@
     font-family: var(--fontone);
     color:black;
 }
+.nav-item a {
+  color: #fff;
+  border-radius: 10px;
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item a:hover {
+  background-color: #ffd60a;
+  color: #000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
 html {
   scroll-behavior: smooth;
 }
@@ -191,6 +205,8 @@ html {
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   color: rgba(0, 0, 0, 0.65);
+  background-color: #ffd60a;
+  color: #000;
 }
 
 .button-6:hover {
@@ -328,6 +344,54 @@ color: var(--colorA) ;
 .mybutton:hover {
     border-color: #000000;
     background: #f7f7f7;
+}
+
+/* Dynamic Color Gradients */
+body {
+  background: linear-gradient(120deg, #f6d365, #fda085);
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+section {
+  padding: 100px 0;
+  position: relative;
+}
+
+
+/* Glassmorphism Styling */
+
+
+/* Minimalist Design with Bold Typography */
+
+.titles2 {
+  font-size: 4rem;
+}
+
+/* Scroll-triggered animations using GSAP */
+.scroll-triggered {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Gradient Animations */
+.gradient-text {
+  background: linear-gradient(45deg, #d53369, #daae51);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 3s infinite alternate;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 
