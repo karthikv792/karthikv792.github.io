@@ -394,3 +394,19 @@ section {
   }
 }
 
+/* Twitter blockquote container */
+.tweet-container {
+  text-align: center;
+}
+
+.tweet-container blockquote.twitter-tweet {
+  margin: 0 auto !important;
+  display: inline-block !important;
+  text-align: left !important;
+}
+
+.tweet-container iframe {
+  margin: 0 auto !important;
+  display: block !important;
+}
+
