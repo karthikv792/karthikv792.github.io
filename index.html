@@ -2,75 +2,99 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>KV's Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dr. Karthik Valmeekam - AI Researcher specializing in LLMs, Planning, and Reasoning. PhD from Arizona State University.">
+  <title>KV's Personal Website | AI Researcher</title>
   
-  <!-- Common CSS -->
-  <link rel='stylesheet' href='css/styles.css'>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://kit.fontawesome.com/d21ce2486e.js">
-  
-  <!-- Preload images -->
+  <!-- Preload critical resources -->
   <link rel="preload" as="image" href="images/bgimage1.jpg">
-  <link rel="preload" as="image" href="images/water.JPG">
-  <link rel="preload" as="image" href="images/IMG_6059.jpg">
-  <link rel="preload" as="image" href="images/learning.jpg">
-  <link rel="preload" as="image" href="images/endof.jpg">
-  <link rel="preload" as="image" href="images/allineed.JPG">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
-  <!-- Common JS -->
-  <script src="scripts/jquery-3.6.0.min.js"></script>
-  <script src='https://d3js.org/d3.v5.min.js'></script>
-  <script src="scripts/parallax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-  <script src="scripts/txtrotate.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMTF7Z04GB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-CMTF7Z04GB');
-  </script>
-  <script src="https://kit.fontawesome.com/d21ce2486e.js" crossorigin="anonymous"></script>
-  <!-- CSS only -->
+  <!-- Fonts - Premium typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sacramento&family=Gloock&family=Fredoka&display=swap" rel="stylesheet">
+  
+  <!-- CSS - Bootstrap first, then modular components -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-  <!-- JS, Popper.js, and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+  
+  <!-- Modular CSS - Design Tokens & Components -->
+  <link rel='stylesheet' href='css/tokens.css'>
+  <link rel='stylesheet' href='css/components/view-transitions.css'>
+  <link rel='stylesheet' href='css/components/ambient.css'>
+  <link rel='stylesheet' href='css/components/typography.css'>
+  <link rel='stylesheet' href='css/components/cards.css'>
+  <link rel='stylesheet' href='css/components/buttons.css'>
+  <link rel='stylesheet' href='css/styles.css'>
+  
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/d21ce2486e.js" crossorigin="anonymous" defer></script>
+  
+  <!-- Critical JS (jQuery needed for Bootstrap - must load synchronously) -->
+  <script src="scripts/jquery-3.6.0.min.js"></script>
+  
+  <!-- Bootstrap JS (no defer - required for navbar toggle to work) -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
-    <script src="scripts/jquery-3.6.0.min.js"></script>
-    <script src='https://d3js.org/d3.v5.min.js'></script>
-    <script src="scripts/parallax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+  
+  <!-- anime.js for letter animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
+  
+  <!-- GSAP + Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js" defer></script>
+  
+  <!-- Modular JS Components -->
+  <script src="js/components/config.js" defer></script>
+  <script src="js/components/utils.js" defer></script>
+  <script src="js/components/ScrollProgress.js" defer></script>
+  <script src="js/components/ScrambleText.js" defer></script>
+  <script src="js/components/HandwritingText.js" defer></script>
+  <script src="js/components/MagneticButtons.js" defer></script>
+  <script src="js/components/HeroTimeline.js" defer></script>
+  <script src="js/components/EducationTimeline.js" defer></script>
+  <script src="js/components/PublicationsFilter.js" defer></script>
+  <script src="js/components/SectionReveals.js" defer></script>
+  <script src="js/components/NavbarScroll.js" defer></script>
+  <script src="js/components/ProjectsReveal.js" defer></script>
+  <script src="js/components/GrainOverlay.js" defer></script>
+  <script src="js/components/ViewTransitions.js" defer></script>
+  <script src="js/components/index.js" defer></script>
+  
+  <!-- Legacy main.js (for additional custom code) -->
+  <script src="js/main.js" defer></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CMTF7Z04GB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-CMTF7Z04GB');
+  </script>
 </head>
 <body>
   <div id="scroll-progress-bar"></div>
-  <!-- Navbar will be inserted here -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light navfont">
-  <a class="navbar-brand" href="#">
-    <img loading="lazy" src="images/logo2.png" width="50rem" height="50rem" class="d-inline-block align-top" alt="">
-  </a>
+  <!-- Premium Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark premium-nav">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mx-auto nav-center">
       <li class="nav-item">
-        <a class="nav-link active" href="#hiWindow">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#hiWindow">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#About">About</a>
@@ -82,41 +106,27 @@
         <a class="nav-link" href="#Learnings">Learnings</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#RandP">Research & Projects</a>
+        <a class="nav-link" href="#RandP">Research</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="images/KV_CV.pdf" target="_blank">CV</a>
       </li>
     </ul>
-    <div>
-      <!-- Social Media Icons -->
-      <a class="button-6" href="mailto: kvalmeek@asu.edu">
-        <img loading="lazy" class="m-2" width="35rem" height="35rem" src="https://img.icons8.com/ios-filled/50/000000/new-post.png" />
+    <div class="nav-social">
+      <a class="nav-social-link" href="mailto:kvalmeek@asu.edu" title="Email">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/></svg>
       </a>
-      <a class="button-6" href="https://scholar.google.com/citations?user=CrYLDt4AAAAJ" target="_blank">
-        <svg class="iconn m-2" width="2.5rem" height="2.5rem" viewBox="0 0 24 24">
-          <path d="M 11 4 L 3 9 L 8.4921875 9 C 8.4715892 9.0754986 8.4383718 9.1441171 8.421875 9.2226562 C 8.375875 9.4646562 8.3398437 9.7308125 8.3398438 10.007812 C 8.3398438 13.578812 11.990234 13.175781 11.990234 13.175781 L 11.990234 14.085938 C 11.990234 14.454937 12.47425 14.327172 12.53125 15.076172 C 12.28925 15.076172 7.4746094 14.937547 7.4746094 18.185547 C 7.4746094 21.445547 11.724609 21.285156 11.724609 21.285156 C 11.724609 21.285156 16.632812 21.504656 16.632812 17.472656 C 16.634813 15.063656 13.822266 14.2795 13.822266 13.3125 C 13.822266 12.3335 15.941406 12.045906 15.941406 9.7539062 C 15.941406 8.7519062 15.872828 8.03825 15.423828 7.53125 C 15.388828 7.49625 15.366031 7.4722188 15.332031 7.4492188 C 15.324304 7.4420199 15.31448 7.4367774 15.306641 7.4296875 L 15.429688 7.4296875 L 17.5 5.8769531 L 17.5 8 A 0.50005 0.50005 0 0 0 17.511719 8.1152344 A 1.0001 1.0001 0 0 0 17 9 L 17 10 A 1.0001 1.0001 0 1 0 19 10 L 19 9 A 1.0001 1.0001 0 0 0 18.488281 8.1152344 A 0.50005 0.50005 0 0 0 18.5 8 L 18.5 5.125 L 20 4 L 11 4 z M 11.691406 7.0527344 C 11.979219 7.0397031 12.268922 7.109625 12.544922 7.265625 C 12.751922 7.369625 12.946141 7.518125 13.119141 7.703125 C 13.476141 8.060125 13.7765 8.5784531 13.9375 9.1894531 C 14.3175 10.640453 13.823828 12.035781 12.798828 12.300781 C 11.784828 12.587781 10.654672 11.641172 10.263672 10.201172 C 10.090672 9.4991719 10.114547 8.8202969 10.310547 8.2792969 C 10.312395 8.2723193 10.316443 8.2666961 10.318359 8.2597656 C 10.321722 8.2581149 10.32682 8.253536 10.330078 8.2519531 C 10.386262 8.0380596 10.478099 7.8461668 10.589844 7.6875 C 10.795388 7.3872165 11.066477 7.1838352 11.404297 7.09375 C 11.499297 7.07075 11.595469 7.0570781 11.691406 7.0527344 z M 12.082031 15.685547 C 13.775031 15.558547 15.216313 16.490813 15.320312 17.757812 C 15.390313 19.013813 14.087812 20.131094 12.382812 20.246094 C 10.689813 20.361094 9.2274844 19.441547 9.1464844 18.185547 C 9.0654844 16.918547 10.377031 15.812547 12.082031 15.685547 z" />
-        </svg>
+      <a class="nav-social-link" href="https://scholar.google.com/citations?user=CrYLDt4AAAAJ" target="_blank" title="Google Scholar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12,3L1,9L5,11.18V17.18L12,21L19,17.18V11.18L21,10.09V17H23V9L12,3M18.82,9L12,12.72L5.18,9L12,5.28L18.82,9M17,16L12,18.72L7,16V12.27L12,15L17,12.27V16Z"/></svg>
       </a>
-      <a class="button-6" href="https://www.github.com/karthikv792" target="__blank">
-        <svg viewBox="0 0 24 24" class="iconn m-2" width="2.5rem" height="2.5rem">
-          <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path>
-        </svg>
+      <a class="nav-social-link" href="https://www.github.com/karthikv792" target="_blank" title="GitHub">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/></svg>
       </a>
-      <a class="button-6" href="https://www.linkedin.com/in/karthikv792/" target="__blank">
-        <svg viewBox="0 0 24 24" class="iconn m-2" width="2.5rem" height="2.5rem">
-          <path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"></path>
-        </svg>
+      <a class="nav-social-link" href="https://www.linkedin.com/in/karthikv792/" target="_blank" title="LinkedIn">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"/></svg>
       </a>
-      <a class="button-6" href="https://twitter.com/karthikv792" target="__blank">
-        <svg viewBox="0 0 24 24" class="iconn m-2" width="2.5rem" height="2.5rem">
-          <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path>
-        </svg>
-      </a>
-      <a class="button-6" href="https://www.instagram.com/thephotopoet_792/">
-        <svg class="iconn m-1" viewBox="0 0 24 24" width="2.5rem" height="2.5rem">
-          <path d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z" />
-        </svg>
+      <a class="nav-social-link" href="https://twitter.com/karthikv792" target="_blank" title="Twitter">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"/></svg>
       </a>
     </div>
   </div>
@@ -125,599 +135,505 @@
   <!-- Main content will be inserted here -->
   
     <!-- Hero Section -->
-    <section id="hiWindow" class="parallax-window glass-effect tmWelcome" data-parallax="scroll" data-image-src="images/bgimage1.jpg" loading="lazy">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col offset-md-4">
-        <div class="ml-auto mr-0">
-          <div class="text-center">
+    <section id="hiWindow" class="parallax-section glass-effect tmWelcome hero-section" style="background-image: url('images/bgimage1.jpg')">
+  <div class="hero-content">
+    <div class="hero-text">
             <h3 class="titles1">Hello I'm</h3>
             <h1 class="titles2">Valmeekam Karthik</h1>
             <span class="blink_me">
-              <h3 style="font-family: var(--fontone);font-size: 1rem;color: white;opacity: 0.7;">Scroll down <br>For a
-                tour into my world</h3>
-              <i class="fas fa-arrow-circle-down" style="color: white;font-size: 1.5rem;opacity: 0.7;"></i>
+        <h3 class="scroll-hint">Scroll down <br>For a tour into my world</h3>
+        <i class="fas fa-arrow-circle-down scroll-arrow"></i>
             </span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section> 
-<section id="About" class="parallax-window glass-effect tmWelcome" data-parallax="scroll" data-image-src="images/water.JPG" loading="lazy">
-    <div class="container-fluid justify-content-center">
-      
-      <div class="row m-5"></div>
-      <div class="jumbotron scroll-triggered glass-effect text-center">
-        <h2 class="rotatetext"> <a style="font-family: var(--fontthree); font-weight: bold">I am a</a>
-          <span class="txt-rotate" style="font-family: var(--fonttwo); font-size: 2.5rem; font-weight: bold"
-            data-period="1000" data-rotate='[ "Student!","Researcher!","Programmer!","Storyteller!" ]'></span>
+<section id="About" class="parallax-section glass-effect tmWelcome" style="background-image: url('images/water.JPG')">
+    <div class="container-fluid">
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="animate-letters rotatetext"> I am a
+          <span class="txt-rotate" data-period="1000" data-rotate='[ "Student!","Researcher!","Programmer!","Storyteller!" ]'></span>
         </h2>
-        <p class="pcont">
+      </div>
 
-          I was born in <a href="">Hyderabad, India</a> but my childhood was shaped by two vastly different places; the sub-tropical highlands of <a href="https://en.wikipedia.org/wiki/Addis_Ababa">Addis Ababa, Ethiopia</a> (from K.G. to 5th Grade) and the sun-scorching deserts of <a href="https://en.wikipedia.org/wiki/Ibra">Ibra, Oman </a>(5th to 10th Grade).
-          Whereever I went, I carried my love for stories and thought of myself as a storyteller.<br><br>
-          After my frivolous attempt at cracking the JEE, I joined <a href="">Vellore Institute of Technology</a> to explore and tell
-          stories about Computers and Algorithms.
-          During my Masters at Arizona State University, I discovered that rigorously formalized ideas are great stories
-          to tell!
-          That drove me to pursue research under the guidance of <a href="https://rakaposhi.eas.asu.edu/">Prof. Subbarao Kambhampati</a>. <br><br>Currently, my world revolves around Large Language Models (LLMs) and Planning. While many were caught up in the hype of LLMs’ supposed planning capabilities—or panicking about them taking over the world—I was busy helping my group cut through the noise and <a href="https://x.com/rao2z/status/1832786199972565479?s=46">ground the conversation</a>. My efforts earned me the prestigious 🏆 <a href="https://research.ibm.com/university/awards/fellowships-awardees.html"> IBM PhD Fellowship Award (2024) </a> 🏆 in recognition of my work on the reasoning and planning abilities of LLMs. <br><br>
-          When I’m not immersed in research, I channel my creativity into screenwriting, dancing, photography, and playing the keyboard. I also enjoy listening to a wide variety of music, ranging from heavy metal to carnatic ragas.
-        </p>
-        <!--<div class="mt-3" style="font-family:var(--fonttwo); font-size: 2rem;">Let's connect through these!!</div>>
-             <-->
-
-
+      <!-- Bento Grid Layout -->
+      <div class="bento-grid bento-about-grid">
+        <!-- Bio Card - Large -->
+        <div class="bento-card bento-xlarge glass-card scroll-triggered">
+          <div class="bento-card-header">
+            <span class="bento-icon">📖</span>
+            <h3>My Story</h3>
+          </div>
+          <div class="bento-card-content">
+            <p>I was born in <a href="">Hyderabad, India</a> but my childhood was shaped by two vastly different places; the sub-tropical highlands of <a href="https://en.wikipedia.org/wiki/Addis_Ababa">Addis Ababa, Ethiopia</a> (from K.G. to 5th Grade) and the sun-scorching deserts of <a href="https://en.wikipedia.org/wiki/Ibra">Ibra, Oman</a> (5th to 10th Grade). Wherever I went, I carried my love for stories and thought of myself as a storyteller.</p>
+            <p>After my frivolous attempt at cracking the JEE, I joined <a href="">Vellore Institute of Technology</a> to explore and tell stories about Computers and Algorithms. During my Masters at Arizona State University, I discovered that rigorously formalized ideas are great stories to tell! That drove me to pursue research under the guidance of <a href="https://rakaposhi.eas.asu.edu/">Prof. Subbarao Kambhampati</a>.</p>
+            <p>Currently, my world revolves around Large Language Models (LLMs) and Planning. While many were caught up in the hype of LLMs' supposed planning capabilities—or panicking about them taking over the world—I was busy helping my group cut through the noise and <a href="https://x.com/rao2z/status/1832786199972565479">ground the conversation</a>. My efforts earned me the prestigious 🏆 <a href="https://research.ibm.com/university/awards/fellowships-awardees.html">IBM PhD Fellowship Award (2024)</a> 🏆 in recognition of my work on the reasoning and planning abilities of LLMs.</p>
+            <p>When I'm not immersed in research, I channel my creativity into screenwriting, dancing, photography, and playing the keyboard. I also enjoy listening to a wide variety of music, ranging from heavy metal to carnatic ragas.</p>
+          </div>
         </div>
 
-     
-      <div class="row m-6"></div>
-        <div class="jumbotron scroll-triggered glass-effect text-left">
-          <h2> <a style="font-family: var(--fontthree); font-weight: bold">News</a></h2>
-          <p class="pcont">
-            <!-- #A Table with two columns - Date and Content -->
-            <table class="table borderless">
+        <!-- Twitter Card - Medium -->
+        <div class="bento-card bento-medium glass-card scroll-triggered">
+          <div class="bento-card-header">
+            <span class="bento-icon">🐦</span>
+            <h3>Featured</h3>
+          </div>
+          <div class="bento-card-content tweet-wrapper">
+            <blockquote class="twitter-tweet" data-theme="dark">
+              <a href="https://twitter.com/rao2z/status/1991364686244446648"></a>
+            </blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
 
-            <div class="tweet-container">
-                  <blockquote class="twitter-tweet" data-theme="dark">
-                    <a href="https://twitter.com/rao2z/status/1991364686244446648"></a>
-                  </blockquote>
-                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
+        <!-- Award Card - Small -->
+        <div class="bento-card bento-small glass-card scroll-triggered">
+          <div class="bento-card-header">
+            <span class="bento-icon">🏆</span>
+            <h3>Recognition</h3>
+          </div>
+          <div class="bento-card-content">
+            <div class="stat-highlight">
+              <span class="stat-label">IBM PhD Fellowship</span>
+              <span class="stat-year">2024</span>
+            </div>
+            <p class="stat-desc">Recognition for work on planning/reasoning abilities of LLMs</p>
+        </div>
+      </div>
+
+        <!-- News Card - Full Width -->
+        <div class="bento-card bento-full glass-card scroll-triggered">
+          <div class="bento-card-header">
+            <span class="bento-icon">📰</span>
+            <h3>Latest News</h3>
+          </div>
+          <div class="bento-card-content">
+            <table class="news-table">
               <tr>
-            
-                <th style="color: var(--colorA);" class="datetitle2">Nov 19, 2025</th>
-                
-                <th class="pcont">Finally became Dr. Karthik Valmeekam!! Thanks to my committee members <a href="https://x.com/rao2z" target="_blank">@rao2z</a> <a href="https://x.com/liuhuan" target="_blank">@liuhuan</a> <a href="https://x.com/tdietterich" target="_blank">@tdietterich</a> <a href="https://x.com/sidsrivast" target="_blank">@sidsrivast</a> <a href="https://x.com/sarath_ssreedh" target="_blank">@sarath_ssreedh</a> for their guidance and support!
-                </th>
-                
-              </tr>
-              <tr>
-                <th style="color: var(--colorA);" class="datetitle2">Apr 12, 2025</th>
-                <th class="pcont"><a href=https://arxiv.org/abs/2504.09762> "(How) Do reasoning models reason?"
-                </a> will appear in Annals of the New York Academy of Sciences, 2025!</th>
-              </tr>
-              <tr>
-                <th style="color: var(--colorA);" class="datetitle2">Mar 13, 2025</th>
-                <th class="pcont"><a href=https://openreview.net/forum?id=FkKBxp0FhR> "A Systematic Evaluation of the Planning and Scheduling Abilities of the Reasoning Model o1"
-                </a> will appear in TMLR, 2025!</th>
-              </tr>
-              <tr>
-                <th style="color: var(--colorA);" class="datetitle2">Jan 21, 2025</th>
-                <th class="pcont"><a href="https://arxiv.org/abs/2402.08115" target="_blank"> 
-                  "On the Self-Verification Limitations of
-                  Large Language Models on Reasoning and Planning Tasks"</a> has been accepted to ICLR 2025!</th>
-              </tr>
-              <tr>
-                <th style="color: var(--colorA);" class="datetitle2">Jan 01, 2025</th>
-                <th class="pcont">Recipient of the <a href="https://www.linkedin.com/posts/school-of-computing-and-augmented-intelligence_massive-congrats-to-valmeekam-karthik-activity-7284715553657667584-aQ_4?utm_source=share&utm_medium=member_ios" target="_blank"> 
-                 2024 IBM PhD Fellowship</a> Award! Thanks to IBM Research for this recognition of my ongoing work on the planning/reasoning abilities of LLMs.</th>
-              </tr>
-              <tr>
-                <th style="color: var(--colorA);" class="datetitle2">Sept 25, 2024</th>
-                <th class="pcont"><a href="https://arxiv.org/abs/2405.04776" target="_blank"> 
-                  "Chain of thoughtlessness? An Analysis of CoT in Planning"</a> has been accepted to NeurIPS 2024 as a poster! </th>
-              </tr>
-              <tr>
-                <th style="color: var(--colorA);" class="datetitle2">Sept 23, 2024</th>
-                <th class="pcont"><a
-                  href="https://arxiv.org/pdf/2410.02162" target="_blank">New preprint</a> about OpenAI's o1 
-                  (<img loading="lazy" width =25 src="https://img.icons8.com/?size=100&id=46852&format=png&color=000000">) evaluation on PlanBench
-                  is now available on arXiv
-                  </th>
-              </tr>
-              <tr></tr>
-                <th style="color: var(--colorA);" class="datetitle2">May 1, 2024</th>
-                <th class="pcont"><a href="https://arxiv.org/abs/2402.01817"> 
-                  "LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks"</a> has been accepted to ICML 2024 as a Spotlight Position Paper! </th>
-              </tr>
-            </table>
-            <!-- <li class="pcont">
-              <a style="color: var(--colorA);">Sept 2024:</a> Our paper <a href="https://arxiv.org/abs/2405.04776"> 
-              "Chain of thoughtlessness? An Analysis of CoT in Planning"</a> got accepted at NeurIPS 2024 <img loading="lazy" src="images/hot3.png" width="60" class="m-1">
-            </li>
-            <li class="pcont">
-              <a style="color: var(--colorA);">Sept 2024:</a> Our paper on <a
-              href="https://www.arxiv.org/abs/2409.13373">"LLMs Still Can't Plan; Can LRMs? A Preliminary
-              Evaluation of OpenAI's o1 on PlanBench"</a> is now available on arXiv <img loading="lazy" src="images/hot3.png" width="60" class="ml-1">
-              <img loading="lazy" src="images/new5.png" width="70">
-            </li> -->
-            
-  
-          </p>
-          <!--<div class="mt-3" style="font-family:var(--fonttwo); font-size: 2rem;">Let's connect through these!!</div>>
-               <-->
-  
-  
-  
-  
+                <th class="news-date-cell">Nov 2025</th>
+                <td class="news-text-cell">Finally became <strong>Dr. Karthik Valmeekam</strong>! 🎓</td>
+            </tr>
+            <tr>
+                <th class="news-date-cell">Apr 2025</th>
+                <td class="news-text-cell"><a href="https://arxiv.org/abs/2504.09762">"(How) Do reasoning models reason?"</a> → NYAS</td>
+            </tr>
+            <tr>
+                <th class="news-date-cell">Mar 2025</th>
+                <td class="news-text-cell"><a href="https://openreview.net/forum?id=FkKBxp0FhR">"Systematic Evaluation of o1"</a> → TMLR 2025</td>
+            </tr>
+            <tr>
+                <th class="news-date-cell">Jan 2025</th>
+                <td class="news-text-cell"><a href="https://arxiv.org/abs/2402.08115">"Self-Verification Limitations of LLMs"</a> → ICLR 2025</td>
+            </tr>
+          </table>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="Education" class="parallax-window glass-effect tmWelcome" data-parallax="scroll" data-image-src="images/IMG_6059.jpg" loading="lazy">
-    <div class="container-fluid justify-content-center">
-      <div class="row m-5 justify-content-center titlebg">
-        <h2 class="titles1 m-3 text-center" style="color: black;">Passing through the Academic Jungle</h2>
+  <section id="Education" class="parallax-section glass-effect tmWelcome" style="background-image: url('images/IMG_6059.jpg')">
+    <div class="container-fluid">
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="animate-letters">Passing through the Academic Jungle</h2>
       </div>
-      <div class="row m-3">
-        <div class="col-md-8">
-          <div class="jumbotron scroll-triggered glass-effect">
-            <div class="row">
-              <div class="col-md-4 text-center">
-                <h1 class="datetitle mb-3">2021 - 2025.</h1>
-                <a href="https://yochan-lab.github.io/home/" target="__blank"><img loading="lazy" class="mt-2"
-                    src="images/yochan_icon1.png" style="max-width:80%; object-fit: contain;"></a>
-              </div>
-              <div class="col-md-8">
-                <h1 class="display-4">Arizona State University.</h1>
-                <p class="lead">
-                  Tempe, Arizona, US.
-                </p>
-                <hr class="my-4">
-                <p class="pcont">
-                  <a style="color: var(--colorA);">PhD in Computer Science.</a> <br>GPA* 4.0/4.0
-                  <br> Graduate Research Assistant at <a href="https://yochan-lab.github.io/home/"
-                    target="__blank">Yochan</a> under <a href="http://rakaposhi.eas.asu.edu/" target="__blank">Prof.
-                    Subbarao Kambhampati</a>
-                </p>
-              </div>
-            </div>
-          </div>
 
+      <!-- Timeline Bento Layout -->
+      <div class="timeline-bento">
+        <!-- Vertical line -->
+        <div class="timeline-line"></div>
 
-        </div>
-        <div class="col"></div>
-
-      </div>
-      <div class="row m-3">
-
-        <div class="col"></div>
-        <div class="col-md-8">
-          <div class="jumbotron scroll-triggered glass-effect">
-            <div class="row">
-              <div class="col-md-4 text-center">
-                <h1 class="datetitle mb-3">2019-2021.</h1>
-                <img loading="lazy" class="mt-2" src="images/yochan_icon1.png" style="max-width:80%; object-fit: contain;">
-              </div>
-              <div class="col-md-8">
-                <h1 class="display-4">Arizona State University.</h1>
-                <p class="lead">
-                  Tempe, Arizona, US.
-                </p>
-                <hr class="my-4">
-                <p class="pcont">
-                  <a style="color: var(--colorA);">M.S. in Computer Science.</a>
-                  <br>GPA 4.0/4.0
-                  <br> Graduate Research Assistant at Yochan under Prof. Subbarao Kambhampati
-                  <br>Thesis: <a
-                    href="https://search.proquest.com/openview/023ddfb07232c64f9cd810cd71c966ae/1?pq-origsite=gscholar&cbl=18750&diss=y"
-                    target="__blank">A Study of Explainable Decision Support for Longitudinal Sequential Decision Making
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-
-      </div>
-      <div class="row m-3">
-
-        <div class="col-md-8">
-          <div class="jumbotron scroll-triggered glass-effect">
-            <div class="row">
-              <div class="col-md-4 text-center">
-                <h1 class="datetitle mb-3">2015-2019.</h1>
-                <img loading="lazy" class="mt-2 mb-2" src="images/vit.png" style="max-width:40%; object-fit: contain;">
-                <img loading="lazy" class="mt-2 mb-2" src="images/codechef.png" style="max-width:60%; object-fit: contain;">
-              </div>
-              <div class="col-md-8">
-                <h1 class="display-4"> Vellore Institute Of Technology.</h1>
-                <p class="lead">
-                  Vellore, Tamilnadu, India.
-                </p>
-                <hr class="my-4">
-                <p class="pcont">
-                  <a style="color: var(--colorA);">B.Tech. in Computer Science and Engineering.</a><br> GPA 9.19/10.0
-                  <br>Research Aide under <a href="https://scholar.google.com/citations?user=urTMyXcAAAAJ&hl=en"
-                    target="__blank">Prof. Anuradha J</a>
-                  <br>Vice-Chair Management of Codechef-VIT
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col"></div>
-      </div>
-      <div class="row m-3">
-        <div class="col"></div>
-        <div class="col-md-8">
-          <div class="jumbotron scroll-triggered glass-effect">
-            <div class="row">
-              <div class="col-md-4 text-center">
-                <h1 class="datetitle mb-3">2013-2015.</h1>
-                <img loading="lazy" class="mt-2 mb-4" src="images/narayana.png" style="max-width:80%; object-fit: contain;">
-
-              </div>
-              <div class="col-md-8">
-                <h1 class="display-4"> Narayana Junior College.</h1>
-                <p class="lead">
-                  Hyderabad, Telangana, India.
-                </p>
-                <hr class="my-4">
-                <p class="pcont">
-                  <a style="color: var(--colorA);">Intermediate (11th & 12th Std).</a> <br>Percentage: 95.1%
-
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-      <div class="row m-3">
-
-        <div class="col-md-8">
-          <div class="jumbotron scroll-triggered glass-effect">
-            <div class="row">
-              <div class="col-md-4 text-center">
-                <h1 class="datetitle mb-3">2007-2013.</h1>
-                <img loading="lazy" class="mt-2" src="images/isi.png" style="max-width:80%; object-fit: contain;">
-              </div>
-              <div class="col-md-8">
-                <h1 class="display-4"> Indian School Ibra.</h1>
-                <p class="lead">
-                  Ibra, Oman.
-                </p>
-                <hr class="my-4">
-                <p class="pcont">
-                  <a style="color: var(--colorA);">10th Std.</a> <br>GPA 9.8/10.0<br> Computer Whizkid <br>Best Dancer
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="col"></div>
-    </div>
-  </section>
-  <section id="Learnings" class="parallax-window glass-effect tmWelcome" data-parallax="scroll" data-image-src="images/learning.jpg" loading="lazy">
-    <div class="container-fluid justify-content-center">
-      <div class="row m-5 justify-content-center titlebg">
-        <h2 class="titles1 m-3 text-center" style="color: black;">Learning - A continuous process</h2>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="jumbotron scroll-triggered glass-effect">
-            <!-- <h2 class="titles1 mb-4 text-center" style="color: black;">Experience</h2> -->
-            <div class="row">
-              <div class="col-md-4 text-center">
-                <h1 class="datetitle mb-4">June 2025 - Present.</h1>
-                <img loading="lazy" class="mt-4" src="images/amazon.png" style="max-width:80%; object-fit: contain;">
-              </div>
-              <div class="col-md-8">
-                <h1 class="display-4"> Amazon Science.</h1>
-                <p class="lead">
-                  Sunnyvale, California, US.
-                </p>
-                <hr>
-                <p class="pcont">
-                  <a style="color: var(--colorA);">Applied Scientist II</a> <br> Working in the AGI team to better Nova models.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="jumbotron scroll-triggered glass-effect">
-            <!-- <h2 class="titles1 mb-4 text-center" style="color: black;">Experience</h2> -->
-            <div class="row">
-              <div class="col-md-4 text-center">
-                <h1 class="datetitle mb-4">May - Aug 2024.</h1>
-                <img loading="lazy" class="mt-4" src="images/amazon.png" style="max-width:80%; object-fit: contain;">
-              </div>
-              <div class="col-md-8">
-                <h1 class="display-4"> Amazon Science.</h1>
-                <p class="lead">
-                  Palo Alto, California, US.
-                </p>
-                <hr>
-                <p class="pcont">
-                  <a style="color: var(--colorA);">Applied Scientist Intern</a> <br> Worked on LLMs and Planning.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="jumbotron scroll-triggered glass-effect">
-            <h2 class="titles1 text-center" style="color: black;">Skills</h2>
-            <table class="table mt-4 table-striped">
-              <tr>
-                <th class="categ">Programming Languages</th>
-                <th class="itemss">Python, C++, JavaScript, HTML/CSS, SQL, Bash, SAP-ABAP</th>
-              </tr>
-              <tr>
-                <th class="categ">Frameworks</th>
-                <th class="itemss">HuggingFace Transformers, LoRA PEFT, Flask, Bootstrap, jQuery, D3.js, Pytorch,
-                  Tensorflow, Keras, OpenCV, ROS</th>
-              </tr>
-              <tr>
-                <th class="categ">Tools</th>
-                <th class="itemss">Git, Docker, Kubernetes, AWS, GCP, Jupyter, Colab, Adobe Photoshop, Adobe Premiere
-                  Pro, Adobe Lightroom, Blender, Gazebo, Unreal Engine</th>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-
-
-
-
-  </section>
-  <section id="RandP" class="parallax-window glass-effect tmWelcome" data-parallax="scroll" data-image-src="images/endof.jpg" loading="lazy">
-    <div class="container-fluid justify-content-center">
-      <div class="row m-5 justify-content-center titlebg">
-        <h2 class="titles1 m-3 text-center" style="color: black;"> Execution - That's how dreams become reality </h2>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="jumbotron scroll-triggered glass-effect">
-            <div>
-              <h1 class="display-4"> Publications.
-                <div class="d-inline-block">
-                  <a class="button-6" href="https://scholar.google.com/citations?user=CrYLDt4AAAAJ&hl=en"
-                    target="__blank">
-                    <img loading="lazy" width="30" src="https://img.icons8.com/material-outlined/48/000000/google-scholar.png" />
-                  </a>
-                </div>
-              </h1>
-            </div>
-            <p class="lead">
-              *Formalizing Curiosity*
-            </p>
-            <hr class="my-4">
-            <ol class="pcont">
-            <li><a href="https://arxiv.org/abs/2505.13775" target="_blank">Beyond Semantics: The Unreasonable Effectiveness of Reasonless Intermediate Tokens
-              </a> <img loading="lazy" src="images/new5.png"
-              width="70" class="m-1">
-              <br>
-              <p class="psmall"> Kaya Stechly*, <u>Karthik Valmeekam</u>*, Atharva Gundawar*, Vardhan Palod*, Subbarao Kambhampati 
-                <br> <a style="color: var(--colorA);">Preprint, May 2025</a>
-                <br> <a><i>*equal contribution</i></a>
-                <br> <a href="https://x.com/rao2z/status/1925192588019028440">Tweet</a>, <a href="https://www.linkedin.com/posts/subbarao-kambhampati-3260708_%F0%9D%90%83%F0%9D%90%A8-%F0%9D%90%88%F0%9D%90%A7%F0%9D%90%AD%F0%9D%90%9E%F0%9D%90%AB%F0%9D%90%A6%F0%9D%90%9E%F0%9D%90%9D%F0%9D%90%A2%F0%9D%90%9A%F0%9D%90%AD%F0%9D%90%9E-%F0%9D%90%93%F0%9D%90%A8%F0%9D%90%A4%F0%9D%90%9E%F0%9D%90%A7%F0%9D%90%AC-activity-7331158613127811072-Q6Ht?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB1A3lkBvXSW04Z4unoPcHB8AY3FfBtB3lI">Linkedin Post</a>
-              </p>
-            </li>
-            <li><a href="https://arxiv.org/abs/2505.13697" target="_blank">RL in Name Only? Analyzing the Structural Assumptions in RL post-training for LLMs
-            </a> <img loading="lazy" src="images/new5.png"
-            width="70" class="m-1">
-            <br>
-            <p class="psmall"> Soumya Rani Samineni*, Durgesh Kalwar*, <u>Karthik Valmeekam</u>, Kaya Stechly, Subbarao Kambhampati 
-              <br> <a style="color: var(--colorA);">Preprint, May 2025</a>
-              <br> <a><i>*equal contribution</i></a>
-              <br> <a href="https://x.com/rao2z/status/1926752234580090959">Tweet</a>, <a href="https://www.linkedin.com/posts/subbarao-kambhampati-3260708_this-rlino-paper-preprint-httpslnkdin-activity-7332533915477327872-J8TV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB1A3lkBvXSW04Z4unoPcHB8AY3FfBtB3lI">Linkedin Post</a>
-            </p>
-          </li>
-              <li><a href="https://arxiv.org/abs/2504.09762" target="_blank">(How) Do reasoning models reason?
-              </a> <img loading="lazy" src="images/new5.png"
-              width="70" class="m-1">
-              <br>
-              <p class="psmall">Subbarao Kambhampati, Kaya Stechly, <u>Karthik Valmeekam</u>, 
-                <br> <a style="color: var(--colorA);">Annals of the New York Academy of Sciences 2025</a>
-              </p>
-            </li>
-            <li><a href="https://openreview.net/forum?id=FkKBxp0FhR" target="_blank">A Systematic Evaluation of the Planning and Scheduling Abilities of the Reasoning Model o1</a> 
-            <br>
-            <p class="psmall"><u>Karthik Valmeekam</u>*, Kaya Stechly*, Atharva Gundawar, Subbarao Kambhampati
-              <br> <a style="color: var(--colorA);">TMLR 2025</a>
-              <br> <a><i>*equal contribution</i></a>
-            </p>
-          </li>
-              <li><a href="https://openreview.net/forum?id=4O0v4s3IzY" target="_blank">On the Self-Verification Limitations of
-                Large Language Models on Reasoning and Planning Tasks</a> 
-              <br>
-              <p class="psmall">Kaya Stechly*, <u>Karthik Valmeekam</u>*, Subbarao Kambhampati
-                <br> <a style="color: var(--colorA);">ICLR 2025</a>
-                <br> <a><i>*equal contribution</i></a>
-              </p>
-            </li>
-            <li>
-              <a href=https://arxiv.org/abs/2410.02162> Planning in Strawberry Fields: Evaluating and Improving the Planning and Scheduling Capabilities of LRM o1
+        <!-- Timeline Items -->
+        <div class="timeline-item timeline-left scroll-triggered">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-year">2021 - 2025</div>
+            <div class="timeline-logo">
+              <a href="https://yochan-lab.github.io/home/" target="_blank">
+                <img loading="lazy" src="images/yochan_icon1.png" alt="Yochan Lab">
               </a>
-                   <br>
-                   <p class="psmall"><u>Karthik Valmeekam</u>*, Kaya Stechly*, Atharva Gundawar, Subbarao Kambhampati
-                   <br>
-                   <a style="color: var(--colorA);">A Version to appear in TMLR, 2025.</a>
-                   <br>
-                   <a><i>*equal contribution</i></a>
-                   <br>
-                  </p>    
-           
-               </li>  
-              <li>
-                <a href=https://www.arxiv.org/abs/2409.13373> LLMs Still Can't Plan; Can LRMs? A Preliminary Evaluation of OpenAI's o1 on PlanBench
-                </a>
-                     <br>
-                     <p class="psmall"><u>Karthik Valmeekam</u>*, Kaya Stechly*, Subbarao Kambhampati
-                     <br>
-                     <a style="color: var(--colorA);">arXiv Preprint, Sept 2024.</a>
-                     <br>
-                     <a><i>*equal contribution</i></a>
-                     <br>
-                     (Coverage in <a href=https://the-decoder.com/researchers-put-openais-o1-through-its-paces-exposing-both-breakthroughs-and-limitations>The Decoder</a>, 
-                     Top paper in <a href="https://araneoides.eomail1.com/web-version?ep=1&lc=ee1ec70c-163b-11ef-a933-91d91c4238c9&p=9feae9ca-7a96-11ef-90d4-d7835b3ab8c1&pt=campaign&t=1727199407&s=3f58c0d205a402d687acfc975d67b72b9502246754140e8d41f5190017daf4aa"> Alpha Signal Newsletter</a>)           
-                    </p>    
-             
-                 </li>  
-                 <li><a href="https://arxiv.org/abs/2405.04776" target="_blank">Chain of Thoughtlessness? An Analysis of
-                  CoT in Planning </a> 
-                <br>
-                <p class="psmall">Kaya Stechly*, <u>Karthik Valmeekam</u>*, Subbarao Kambhampati
-                  <br> <a style="color: var(--colorA);">NeurIPS 2024</a>
-                  <br> <a><i>*equal contribution</i></a>
-                  <br> (Coverage in <a href=https://bdtechtalks.com/2024/05/13/chain-of-thought-planning>TechTalks</a>)
-                </p>
-              </li>
-              <li><a href="https://arxiv.org/abs/2402.01817" target="_blank">LLMs Can't Plan, But Can Help Planning in
-                  LLM-Modulo Frameworks </a> 
-                  <!-- <img loading="lazy" src="images/new5.png" width="70" class="m-1"> -->
-                <br>
-                <p class="psmall">Subbarao Kambhampati, <u>Karthik Valmeekam</u>, Lin Guan, Kaya Stechly, Mudit Verma,
-                  Siddhant Bhambri, Lucas Saldyt, Anil Murthy
-                  <br> <a style="color: var(--colorA);">ICML 2024 (Position Paper) </a>
-                </p>
-              </li>
-              
-              <li><a href="https://arxiv.org/abs/2405.20625" target="_blank">Robust Planning with LLM-Modulo Framework: Case Study in Travel Planning</a> 
-              <br>
-              <p class="psmall">Atharva Gundawar, Mudit Verma, Lin Guan, Karthik Valmeekam, Siddhant Bhambri, Subbarao Kambhampati
-                <br> <a style="color: var(--colorA);">arXiv Preprint, May 2024.</a>
-              </p>
-            </li>
-              <li><a href="https://aaai.org/aaai-conference/aaai-24-tutorial-and-lab-list/#th20" target="_blank">On the
-                  role of large language models in planning</a> 
-                <br>
-                <p class="psmall">Subbarao Kambhampati, <u>Karthik Valmeekam</u>, Lin Guan
-                  <br> <a style="color: var(--colorA);"> Tutorial at AAAI 2024</a>
-                </p>
-              </li>
-              
-              <li><a href="https://arxiv.org/abs/2305.15771" target="_blank">On the Planning Abilities of Large Language
-                  Models--A Critical Investigation </a>
-                <br>
-                <p class="psmall"><u>Karthik Valmeekam</u>, Matthew Marquez, Sarath Sreedharan, Subbarao Kambhampati
-                  <br> <a style="color: var(--colorA);">NeurIPS 2023 (Spotlight)</a> (Earlier at <a
-                    style="color: var(--colorA);">KLR@ICML 2023</a>)
-                </p>
-              </li>
-              <li><a href="https://arxiv.org/abs/2305.14909" target="_blank">Leveraging Pre-trained Large Language
-                  Models to Construct and Utilize World Models for Model-based Task Planning </a>
-                <br>
-                <p class="psmall">Lin Guan*, <u>Karthik Valmeekam</u>*, Sarath Sreedharan, Subbarao Kambhampati
-                  <br> <a style="color: var(--colorA);">NeurIPS 2023</a> (Earlier at <a
-                    style="color: var(--colorA);">KLR@ICML 2023</a>)
-                  <br> <a><i>*equal contribution</i></a>
-                </p>
-              </li>
-              <li><a
-                  href="https://www.dropbox.com/scl/fi/43c5pyxfdx62d5g28lejx/718_planbench_an_extensible_benchm.pdf?rlkey=0agubkt98mbd83hdhme9f0a1p&dl=0"
-                  target="_blank">PlanBench: An Extensible Benchmark for Evaluating Large Language Models on Planning
-                  and Reasoning about Change </a>
-                <br>
-                <p class="psmall"><u>Karthik Valmeekam</u>, Matthew Marquez, Alberto Olmo, Sarath Sreedharan, Subbarao
-                  Kambhampati
-                  <br> <a style="color: var(--colorA);">NeurIPS 2023 (Benchmark Track)</a>
-                </p>
-              </li>
-              <li><a href="https://arxiv.org/abs/2310.08118" target="_blank">Can Large Language Models Really Improve by
-                  Self-critiquing Their Own Plans?</a>
-                <br>
-                <p class="psmall"><u>Karthik Valmeekam</u>, Matthew Marquez, Subbarao Kambhampati
-                  <br> <a style="color: var(--colorA);">FMDM@NeurIPS 2023</a>
-                </p>
-              </li>
-
-            <li data-year="2023"><a href="https://arxiv.org/abs/2210.15906" target="_blank">Relative Behavioral Attributes: Filling the
-                Gap between Symbolic Goal Specification and Reward Learning from Human Preferences </a>
-              <br>
-              <p class="psmall">Lin Guan, <u>Karthik Valmeekam</u>, Subbarao Kambhampati
-                <br> <a style="color: var(--colorA);">ICLR 2023</a>
-              </p>
-            </li>
-            <li data-year="2023"><a href="https://icaps23.icaps-conference.org/program/tutorials/llms/" target="_blank">On the
-              role of large language models in planning</a> 
-            <br>
-            <p class="psmall">Subbarao Kambhampati, <u>Karthik Valmeekam</u>, Matthew Marquez, Lin Guan
-              <br> <a style="color: var(--colorA);"> Tutorial at ICAPS 2023</a>
+            </div>
+            <h3 class="timeline-title">Arizona State University</h3>
+            <p class="timeline-location">Tempe, Arizona, US</p>
+            <div class="timeline-degree">PhD in Computer Science</div>
+            <p class="timeline-details">
+              GPA 4.0/4.0 • Graduate Research Assistant at <a href="https://yochan-lab.github.io/home/">Yochan</a> under <a href="http://rakaposhi.eas.asu.edu/">Prof. Subbarao Kambhampati</a>
             </p>
-          </li>
-            <li data-year="2022"><a href="https://arxiv.org/abs/2206.10498" target="_blank">Large Language Models Still Can't Plan (A
-                Benchmark for LLMs on Planning and Reasoning about Change) </a>
-              <br>
-              <p class="psmall"><u>Karthik Valmeekam</u>, Alberto Olmo, Sarath Sreedharan, Subbarao Kambhampati
-                <br> <a style="color: var(--colorA);">FMDM@NeurIPS 2022</a>
-              </p>
-            </li>
-            <li data-year="2022"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/18009" target="_blank">RADAR-X: An
-                Interactive Interface Pairing Contrastive Explanations with Revised Plan Suggestions </a>
-              <br>
-              <p class="psmall"><u>Karthik Valmeekam</u>, Sarath Sreedharan, Sailik Sengupta, Subbarao Kambhampati
-                <br> <a style="color: var(--colorA);">ICAPS 2022; AAAI 2021 Demos</a>
-              </p>
-            </li>
-            <li data-year="2018"><a href="https://www.sciencedirect.com/science/article/pii/S1877050918309359" target="_blank">Opinion
-                Mining on Emojis using Deep Learning Techniques </a>
-              <br>
-              <p class="psmall"><u>Karthik Valmeekam</u>, Dheeraj Nair, J Anuradha
-                <br> <a style="color: var(--colorA);">Procedia Computer Science, 2018</a>
-              </p>
-            </li>
-          </ol>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-right scroll-triggered">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-year">2019 - 2021</div>
+            <div class="timeline-logo">
+              <img loading="lazy" src="images/yochan_icon1.png" alt="ASU">
+            </div>
+            <h3 class="timeline-title">Arizona State University</h3>
+            <p class="timeline-location">Tempe, Arizona, US</p>
+            <div class="timeline-degree">M.S. in Computer Science</div>
+            <p class="timeline-details">
+              GPA 4.0/4.0 • Thesis: <a href="https://search.proquest.com/openview/023ddfb07232c64f9cd810cd71c966ae/1?pq-origsite=gscholar&cbl=18750&diss=y">Explainable Decision Support for Sequential Decision Making</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-left scroll-triggered">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-year">2015 - 2019</div>
+            <div class="timeline-logo">
+              <img loading="lazy" src="images/vit.png" alt="VIT">
+            </div>
+            <h3 class="timeline-title">Vellore Institute Of Technology</h3>
+            <p class="timeline-location">Vellore, Tamilnadu, India</p>
+            <div class="timeline-degree">B.Tech. in Computer Science</div>
+            <p class="timeline-details">
+              GPA 9.19/10.0 • Research Aide under <a href="https://scholar.google.com/citations?user=urTMyXcAAAAJ&hl=en">Prof. Anuradha J</a> • Vice-Chair Codechef-VIT
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-right scroll-triggered">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-year">2013 - 2015</div>
+            <div class="timeline-logo">
+              <img loading="lazy" src="images/narayana.png" alt="Narayana">
+            </div>
+            <h3 class="timeline-title">Narayana Junior College</h3>
+            <p class="timeline-location">Hyderabad, Telangana, India</p>
+            <div class="timeline-degree">Intermediate (11th & 12th)</div>
+            <p class="timeline-details">Percentage: 95.1%</p>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-left scroll-triggered">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-year">2007 - 2013</div>
+            <div class="timeline-logo">
+              <img loading="lazy" src="images/isi.png" alt="ISI">
+            </div>
+            <h3 class="timeline-title">Indian School Ibra</h3>
+            <p class="timeline-location">Ibra, Oman</p>
+            <div class="timeline-degree">10th Std</div>
+            <p class="timeline-details">GPA 9.8/10.0 • Computer Whizkid • Best Dancer</p>
+          </div>
         </div>
       </div>
     </div>
+  </section>
+  <section id="Learnings" class="parallax-section glass-effect tmWelcome" style="background-image: url('images/learning.jpg')">
+    <div class="container-fluid">
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="animate-letters">Learning - A continuous process</h2>
+      </div>
 
-    <div class="row">
-      <div class="col">
-        <div class="jumbotron scroll-triggered glass-effect">
-          <h1 class="display-4">Projects</h1>
-          <p class="lead">
-            *Get the engine started.*
-          </p>
-          <hr class="my-4">
-          <p>
-          <ol class="pcont">
-            <li><a href="https://github.com/karthikv792/LLMs-Planning" target="_blank">LLMs for Planning</a> <img loading="lazy"
-                src="images/hot3.png" width="60" class="m-1"> 
-                <i><a id="github-stars" style="color: var(--colorA);" class="psmall" style="font-size: 0.8em;">Loading stars...</a> </i> </li>
-            <li><a href="https://github.com/karthikv792/RL-for-Imperfect-Info-Games" target="_blank">Reinforcement
-                Learning for Sequence: An Imperfect Information Board Game </a> </li>
-            <li><a href="https://github.com/karthikv792/TORCS_SAC_PYTORCH" target="_blank">High Speed Autonomous
-                Drifting using Deep Reinforcement Learning </a></li>
-            <li><a href="https://github.com/karthikv792/NashQ" target="_blank">Implementation and Evaluation of Nash Q
-                Learning </a></li>
-            <li><a href="https://github.com/karthikv792/PDDL-parser" target="_blank">Parsing and Writing AI Planning
-                models (represented in PDDL) </a></li>
-            <li><a href="https://hopeful-brahmagupta-b552a0.netlify.app/" target="_blank">Paws in Space - Data
-                Visualization</a></li>
-            <li><a href="https://wonderful-zuccutto-9c2fd2.netlify.app/" target="_blank">How to Open in Chess? - Data
-                Visualization</a> </li>
-          </ol>
-          </p>
+      <!-- Experience Bento -->
+      <div class="bento-grid" style="margin-bottom: 2rem;">
+        <!-- Amazon Current -->
+        <div class="bento-card bento-medium glass-card scroll-triggered">
+          <div class="bento-card-header">
+            <span class="bento-icon">🚀</span>
+            <h3>Current Role</h3>
+              </div>
+          <div class="bento-card-content">
+            <div class="exp-logo">
+              <img loading="lazy" src="images/amazon.png" alt="Amazon" style="max-width: 100px;">
+            </div>
+            <h4 class="exp-title">Amazon Science</h4>
+            <p class="exp-location">Sunnyvale, California, US</p>
+            <div class="exp-role">Applied Scientist II</div>
+            <p class="exp-dates">June 2025 - Present</p>
+            <p class="exp-desc">Working in the AGI team to better Nova models.</p>
+          </div>
         </div>
+
+        <!-- Amazon Intern -->
+        <div class="bento-card bento-medium glass-card scroll-triggered">
+          <div class="bento-card-header">
+            <span class="bento-icon">🔬</span>
+            <h3>Previous Experience</h3>
+      </div>
+          <div class="bento-card-content">
+            <div class="exp-logo">
+              <img loading="lazy" src="images/amazon.png" alt="Amazon" style="max-width: 100px;">
+            </div>
+            <h4 class="exp-title">Amazon Science</h4>
+            <p class="exp-location">Palo Alto, California, US</p>
+            <div class="exp-role">Applied Scientist Intern</div>
+            <p class="exp-dates">May - Aug 2024</p>
+            <p class="exp-desc">Worked on LLMs and Planning.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="skills-section">
+        <h3 class="skills-header">Skills & Technologies</h3>
+        <div class="skills-grid">
+          <!-- Programming Languages -->
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">💻</span>
+            <span class="skill-name">Python</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">⚡</span>
+            <span class="skill-name">C++</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">🌐</span>
+            <span class="skill-name">JavaScript</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">🗃️</span>
+            <span class="skill-name">SQL</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">🐚</span>
+            <span class="skill-name">Bash</span>
+          </div>
+          <!-- Frameworks -->
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">🤗</span>
+            <span class="skill-name">HuggingFace</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">🔥</span>
+            <span class="skill-name">PyTorch</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">🧠</span>
+            <span class="skill-name">TensorFlow</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">👁️</span>
+            <span class="skill-name">OpenCV</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">🤖</span>
+            <span class="skill-name">ROS</span>
+          </div>
+          <!-- Tools -->
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">🐳</span>
+            <span class="skill-name">Docker</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">☸️</span>
+            <span class="skill-name">Kubernetes</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">☁️</span>
+            <span class="skill-name">AWS</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">🎬</span>
+            <span class="skill-name">Premiere Pro</span>
+          </div>
+          <div class="skill-card glass-card scroll-triggered">
+            <span class="skill-icon">🎨</span>
+            <span class="skill-name">Photoshop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="RandP" class="parallax-section glass-effect tmWelcome" style="background-image: url('images/endof.jpg')">
+    <div class="container-fluid">
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="animate-letters">Execution - That's how dreams become reality</h2>
+      </div>
+
+      <!-- Publications Bento Card -->
+      <div class="pub-container glass-card">
+        <div class="pub-header">
+          <div class="pub-title-row">
+            <h3>📚 Publications</h3>
+            <a href="https://scholar.google.com/citations?user=CrYLDt4AAAAJ&hl=en" target="_blank" class="scholar-link">
+              Google Scholar →
+                  </a>
+                </div>
+          <p class="pub-subtitle">*Formalizing Curiosity*</p>
+        </div>
+
+        <div class="pub-list">
+          <!-- 2025 Publications -->
+          <div class="pub-item scroll-triggered" data-year="2025">
+            <span class="pub-year">2025</span>
+            <span class="pub-venue">Preprint</span>
+            <a href="https://arxiv.org/abs/2505.13775" target="_blank" class="pub-title-link">Beyond Semantics: The Unreasonable Effectiveness of Reasonless Intermediate Tokens</a>
+            <div class="pub-details">
+              <span class="pub-authors">Kaya Stechly*, <u>Karthik Valmeekam</u>*, Atharva Gundawar*, Vardhan Palod*, Subbarao Kambhampati</span>
+              <span class="pub-new">NEW</span>
+            </div>
+          </div>
+
+          <div class="pub-item scroll-triggered" data-year="2025">
+            <span class="pub-year">2025</span>
+            <span class="pub-venue">Preprint</span>
+            <a href="https://arxiv.org/abs/2505.13697" target="_blank" class="pub-title-link">RL in Name Only? Analyzing the Structural Assumptions in RL post-training for LLMs</a>
+            <div class="pub-details">
+              <span class="pub-authors">Soumya Rani Samineni*, Durgesh Kalwar*, <u>Karthik Valmeekam</u>, Kaya Stechly, Subbarao Kambhampati</span>
+              <span class="pub-new">NEW</span>
+            </div>
+          </div>
+
+          <div class="pub-item scroll-triggered" data-year="2025">
+            <span class="pub-year">2025</span>
+            <span class="pub-venue">NYAS</span>
+            <a href="https://arxiv.org/abs/2504.09762" target="_blank" class="pub-title-link">(How) Do reasoning models reason?</a>
+            <div class="pub-details">
+              <span class="pub-authors">Subbarao Kambhampati, Kaya Stechly, <u>Karthik Valmeekam</u></span>
+            </div>
+          </div>
+
+          <div class="pub-item scroll-triggered" data-year="2025">
+            <span class="pub-year">2025</span>
+            <span class="pub-venue">TMLR</span>
+            <a href="https://openreview.net/forum?id=FkKBxp0FhR" target="_blank" class="pub-title-link">A Systematic Evaluation of the Planning and Scheduling Abilities of o1</a>
+            <div class="pub-details">
+              <span class="pub-authors"><u>Karthik Valmeekam</u>*, Kaya Stechly*, Atharva Gundawar, Subbarao Kambhampati</span>
+            </div>
+          </div>
+
+          <div class="pub-item scroll-triggered" data-year="2025">
+            <span class="pub-year">2025</span>
+            <span class="pub-venue">ICLR</span>
+            <a href="https://openreview.net/forum?id=4O0v4s3IzY" target="_blank" class="pub-title-link">On the Self-Verification Limitations of LLMs on Reasoning and Planning Tasks</a>
+            <div class="pub-details">
+              <span class="pub-authors">Kaya Stechly*, <u>Karthik Valmeekam</u>*, Subbarao Kambhampati</span>
+            </div>
+          </div>
+
+          <!-- 2024 Publications -->
+          <div class="pub-item scroll-triggered" data-year="2024">
+            <span class="pub-year">2024</span>
+            <span class="pub-venue">NeurIPS</span>
+            <a href="https://arxiv.org/abs/2405.04776" target="_blank" class="pub-title-link">Chain of Thoughtlessness? An Analysis of CoT in Planning</a>
+            <div class="pub-details">
+              <span class="pub-authors">Kaya Stechly*, <u>Karthik Valmeekam</u>*, Subbarao Kambhampati</span>
+            </div>
+          </div>
+
+          <div class="pub-item scroll-triggered" data-year="2024">
+            <span class="pub-year">2024</span>
+            <span class="pub-venue">ICML</span>
+            <a href="https://arxiv.org/abs/2402.01817" target="_blank" class="pub-title-link">LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks</a>
+            <span class="pub-spotlight">🔦 Spotlight</span>
+            <div class="pub-details">
+              <span class="pub-authors">Subbarao Kambhampati, <u>Karthik Valmeekam</u>, Lin Guan, Kaya Stechly, et al.</span>
+            </div>
+          </div>
+
+          <div class="pub-item scroll-triggered" data-year="2024">
+            <span class="pub-year">2024</span>
+            <span class="pub-venue">AAAI Tutorial</span>
+            <a href="https://aaai.org/aaai-conference/aaai-24-tutorial-and-lab-list/#th20" target="_blank" class="pub-title-link">On the role of large language models in planning</a>
+            <div class="pub-details">
+              <span class="pub-authors">Subbarao Kambhampati, <u>Karthik Valmeekam</u>, Lin Guan</span>
+            </div>
+          </div>
+
+          <!-- 2023 Publications -->
+          <div class="pub-item scroll-triggered" data-year="2023">
+            <span class="pub-year">2023</span>
+            <span class="pub-venue">NeurIPS</span>
+            <a href="https://arxiv.org/abs/2305.15771" target="_blank" class="pub-title-link">On the Planning Abilities of Large Language Models--A Critical Investigation</a>
+            <span class="pub-spotlight">🔦 Spotlight</span>
+            <div class="pub-details">
+              <span class="pub-authors"><u>Karthik Valmeekam</u>, Matthew Marquez, Sarath Sreedharan, Subbarao Kambhampati</span>
+            </div>
+          </div>
+
+          <div class="pub-item scroll-triggered" data-year="2023">
+            <span class="pub-year">2023</span>
+            <span class="pub-venue">NeurIPS</span>
+            <a href="https://arxiv.org/abs/2305.14909" target="_blank" class="pub-title-link">Leveraging LLMs to Construct and Utilize World Models for Model-based Task Planning</a>
+            <div class="pub-details">
+              <span class="pub-authors">Lin Guan*, <u>Karthik Valmeekam</u>*, Sarath Sreedharan, Subbarao Kambhampati</span>
+            </div>
+          </div>
+
+          <div class="pub-item scroll-triggered" data-year="2023">
+            <span class="pub-year">2023</span>
+            <span class="pub-venue">NeurIPS (Benchmark)</span>
+            <a href="https://www.dropbox.com/scl/fi/43c5pyxfdx62d5g28lejx/718_planbench_an_extensible_benchm.pdf" target="_blank" class="pub-title-link">PlanBench: An Extensible Benchmark for Evaluating LLMs on Planning</a>
+            <div class="pub-details">
+              <span class="pub-authors"><u>Karthik Valmeekam</u>, Matthew Marquez, Alberto Olmo, Sarath Sreedharan, Subbarao Kambhampati</span>
+            </div>
+          </div>
+
+          <div class="pub-item scroll-triggered" data-year="2023">
+            <span class="pub-year">2023</span>
+            <span class="pub-venue">ICLR</span>
+            <a href="https://arxiv.org/abs/2210.15906" target="_blank" class="pub-title-link">Relative Behavioral Attributes: Filling the Gap between Symbolic Goals and Reward Learning</a>
+            <div class="pub-details">
+              <span class="pub-authors">Lin Guan, <u>Karthik Valmeekam</u>, Subbarao Kambhampati</span>
+            </div>
+          </div>
+
+          <!-- Earlier Publications -->
+          <div class="pub-item scroll-triggered" data-year="2022">
+            <span class="pub-year">2022</span>
+            <span class="pub-venue">ICAPS</span>
+            <a href="https://ojs.aaai.org/index.php/AAAI/article/view/18009" target="_blank" class="pub-title-link">RADAR-X: An Interactive Interface Pairing Contrastive Explanations with Revised Plan Suggestions</a>
+            <div class="pub-details">
+              <span class="pub-authors"><u>Karthik Valmeekam</u>, Sarath Sreedharan, Sailik Sengupta, Subbarao Kambhampati</span>
+            </div>
+          </div>
+
+          <div class="pub-item scroll-triggered" data-year="2018">
+            <span class="pub-year">2018</span>
+            <span class="pub-venue">Procedia CS</span>
+            <a href="https://www.sciencedirect.com/science/article/pii/S1877050918309359" target="_blank" class="pub-title-link">Opinion Mining on Emojis using Deep Learning Techniques</a>
+            <div class="pub-details">
+              <span class="pub-authors"><u>Karthik Valmeekam</u>, Dheeraj Nair, J Anuradha</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div class="projects-container glass-card" style="margin-top: 2rem;">
+        <div class="pub-header">
+          <h3>🚀 Projects</h3>
+          <p class="pub-subtitle">*Get the engine started.*</p>
+    </div>
+        <div class="projects-grid">
+          <a href="https://github.com/karthikv792/LLMs-Planning" target="_blank" class="project-card scroll-triggered">
+            <span class="project-icon">🔥</span>
+            <span class="project-name">LLMs for Planning</span>
+            <span id="github-stars" class="project-stars">Loading...</span>
+          </a>
+          <a href="https://github.com/karthikv792/RL-for-Imperfect-Info-Games" target="_blank" class="project-card scroll-triggered">
+            <span class="project-icon">🎮</span>
+            <span class="project-name">RL for Imperfect Info Games</span>
+          </a>
+          <a href="https://github.com/karthikv792/TORCS_SAC_PYTORCH" target="_blank" class="project-card scroll-triggered">
+            <span class="project-icon">🏎️</span>
+            <span class="project-name">Autonomous Drifting with DRL</span>
+          </a>
+          <a href="https://github.com/karthikv792/NashQ" target="_blank" class="project-card scroll-triggered">
+            <span class="project-icon">♟️</span>
+            <span class="project-name">Nash Q Learning</span>
+          </a>
+          <a href="https://github.com/karthikv792/PDDL-parser" target="_blank" class="project-card scroll-triggered">
+            <span class="project-icon">📝</span>
+            <span class="project-name">PDDL Parser</span>
+          </a>
+          <a href="https://hopeful-brahmagupta-b552a0.netlify.app/" target="_blank" class="project-card scroll-triggered">
+            <span class="project-icon">🐕</span>
+            <span class="project-name">Paws in Space - DataViz</span>
+          </a>
+          <a href="https://wonderful-zuccutto-9c2fd2.netlify.app/" target="_blank" class="project-card scroll-triggered">
+            <span class="project-icon">♟️</span>
+            <span class="project-name">Chess Openings - DataViz</span>
+          </a>
       </div>
     </div>
   </div>
@@ -725,74 +641,54 @@
   
   
   <!-- Footer -->
-  <section id="tmWelcome" class="parallax-window glass-effect" data-parallax="scroll" data-image-src="images/allineed.JPG" loading="lazy"
-    data-natural-height="50%">
-
+  <section id="tmWelcome" class="parallax-section glass-effect footer-section" style="background-image: url('images/allineed.JPG')">
     <div class="container-fluid scroll-triggered justify-content-center text-center">
-
-      <div class="row m-5"></div>
-      <div class="row m-5">  
-        <div class="col">    
-          <div class="jumbotron"><a style="font-family:var(--fonttwo); font-size: 2.5rem; "> *All the background images are captured by me
-              <br>(with the obvious exception of the first one).</a>
+      <div class="footer-bento">
+        <div class="bento-card glass-card footer-card">
+          <div class="bento-card-header">
+            <span class="bento-icon">📸</span>
+            <h3>Behind the Lens</h3>
+          </div>
+          <div class="bento-card-content">
+            <p class="footer-text">*All the background images are captured by me<br><span class="footer-note">(with the obvious exception of the first one)</span></p>
           </div>
         </div>
       </div>
     </div>
-
   </section>
   
-  <!-- Common JS -->
+  <!-- Navigation active state (jQuery) -->
   <script>
-    /* Code for changing active
-            link on Scrolling */
-    $(window).scroll(function () {
-      var distance = $(window).scrollTop();
-      $('.tmWelcome').each(function (i) {
-
-        if ($(this).position().top
-          <= distance + 250) {
-
-          $('.navbar-nav a.active')
-            .removeClass('active');
-
-          $('.navbar-nav a').eq(i)
-            .addClass('active');
-        }
-      });
-    }).scroll();
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray(".scroll-triggered").forEach(function (section) {
-      gsap.fromTo(section, {
-        opacity: 0.8,
-        y: 50
-      }, {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-          end: "bottom 60%",
-          scrub: true
-        }
-      });
+    $(document).ready(function() {
+      // Active link on scroll
+      $(window).scroll(function () {
+        var distance = $(window).scrollTop();
+        $('.tmWelcome').each(function (i) {
+          if ($(this).position().top <= distance + 250) {
+            $('.navbar-nav a.active').removeClass('active');
+            $('.navbar-nav a').eq(i).addClass('active');
+          }
+        });
+      }).scroll();
     });
 
-    // Add this to your existing script section
+    // GitHub stars fetcher
     async function fetchGitHubStars() {
       try {
         const response = await fetch('https://api.github.com/repos/karthikv792/LLMs-Planning');
         const data = await response.json();
         const starsElement = document.getElementById('github-stars');
-        starsElement.textContent = `*${data.stargazers_count} stars*`;
+        if (starsElement) {
+          starsElement.textContent = `★ ${data.stargazers_count} stars`;
+        }
       } catch (error) {
         console.error('Error fetching GitHub stars:', error);
-        document.getElementById('github-stars').textContent = 'Error loading stars';
+        const starsElement = document.getElementById('github-stars');
+        if (starsElement) {
+          starsElement.textContent = 'GitHub repo';
+        }
       }
     }
-
-    // Call the function when the page loads
     document.addEventListener('DOMContentLoaded', fetchGitHubStars);
   </script>
 

@@ -1,0 +1,303 @@
+/**
+ * Design Tokens - Premium Personal Website
+ * Centralized design system values
+ * 
+ * Usage: Import this file first, then reference variables throughout
+ */
+
+:root {
+  /* ============================================
+     COLOR PALETTE
+     Deep, sophisticated with vibrant accents
+     ============================================ */
+  
+  /* Base colors */
+  --color-black: #0a0a0f;
+  --color-white: #fafafa;
+  --color-cream: #f8f6f3;
+  
+  /* Background layers */
+  --color-bg-primary: #0d1117;
+  --color-bg-secondary: #161b22;
+  --color-bg-tertiary: #21262d;
+  --color-bg-elevated: rgba(22, 27, 34, 0.95);
+  
+  /* Surface colors (for cards, panels) */
+  --color-surface: rgba(255, 255, 255, 0.97);
+  --color-surface-hover: rgba(255, 255, 255, 0.99);
+  --color-surface-dark: rgba(255, 255, 255, 0.03);
+  --color-surface-dark-hover: rgba(255, 255, 255, 0.08);
+  
+  /* Text colors */
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #4a4a68;
+  --color-text-muted: rgba(26, 26, 46, 0.7);
+  --color-text-subtle: rgba(26, 26, 46, 0.5);
+  --color-text-inverse: #f4f4f5;
+  
+  /* Accent colors - elegant red palette */
+  --color-accent-primary: #8C1515;      /* Stanford Cardinal Red */
+  --color-accent-secondary: #B83A4B;    /* Royal Crimson */
+  --color-accent-tertiary: #d4913a;     /* Warm Sunset Gold */
+  --color-accent-quaternary: #2E2D29;   /* Stanford Black */
+  
+  /* Accent glows - matching red palette */
+  --color-accent-glow: rgba(140, 21, 21, 0.4);
+  --color-accent-glow-secondary: rgba(184, 58, 75, 0.35);
+  
+  /* Semantic colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+  
+  /* Legacy compatibility - updated to red palette */
+  --colorA: #8C1515;          /* Stanford Cardinal - primary accent */
+  --headerB: #B83A4B;         /* Royal Crimson */
+  --headerC: black;
+  --stan: #8C1515;            /* Stanford Cardinal */
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+  
+  /* Font families - matching legacy */
+  --font-display: 'Sacramento', Georgia, serif;
+  --font-heading: 'Gloock', 'Instrument Serif', Georgia, serif;
+  --font-body: 'DM Sans', 'Fredoka', system-ui, sans-serif;
+  --font-mono: 'Space Mono', 'Consolas', monospace;
+  --font-accent: 'Sacramento', cursive;
+  
+  /* Legacy font mapping - exact matches */
+  --fontone: var(--font-heading);
+  --fonttwo: 'Sacramento', var(--font-display);
+  --fontthree: 'Gloock', var(--font-heading);
+  --fontfour: 'Fredoka', var(--font-body);
+  
+  /* Font sizes - fluid scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
+  --text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3.5rem);
+  --text-5xl: clamp(3rem, 2rem + 5vw, 5rem);
+  --text-6xl: clamp(3.75rem, 2.5rem + 6.25vw, 6rem);
+  
+  /* Font weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  
+  /* Line heights */
+  --leading-none: 1;
+  --leading-tight: 1.2;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* Letter spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ============================================
+     SPACING SCALE
+     Based on 4px grid
+     ============================================ */
+  --space-px: 1px;
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+  
+  /* Legacy spacing */
+  --space-xs: var(--space-1);
+  --space-sm: var(--space-2);
+  --space-md: var(--space-4);
+  --space-lg: var(--space-6);
+  --space-xl: var(--space-8);
+  --space-2xl: var(--space-12);
+  --space-3xl: var(--space-16);
+
+  /* ============================================
+     MOTION TOKENS
+     Premium, physics-based timing
+     ============================================ */
+  
+  /* Durations */
+  --duration-instant: 0ms;
+  --duration-75: 75ms;
+  --duration-100: 100ms;
+  --duration-150: 150ms;
+  --duration-200: 200ms;
+  --duration-300: 300ms;
+  --duration-500: 500ms;
+  --duration-700: 700ms;
+  --duration-1000: 1000ms;
+  
+  /* Named durations */
+  --duration-xs: 150ms;
+  --duration-sm: 250ms;
+  --duration-md: 400ms;
+  --duration-lg: 600ms;
+  --duration-xl: 1000ms;
+  
+  /* Easing curves */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Premium easings */
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --ease-snap: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-circ-out: cubic-bezier(0, 0.55, 0.45, 1);
+  
+  /* Stagger delays */
+  --stagger-fast: 30ms;
+  --stagger-normal: 50ms;
+  --stagger-slow: 80ms;
+
+  /* ============================================
+     BORDERS & RADIUS
+     ============================================ */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+  
+  /* Border widths */
+  --border-0: 0;
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-4: 4px;
+
+  /* ============================================
+     SHADOWS
+     Layered for depth
+     ============================================ */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Accent glows */
+  --shadow-glow-sm: 0 0 15px var(--color-accent-glow);
+  --shadow-glow-md: 0 0 30px var(--color-accent-glow);
+  --shadow-glow-lg: 0 0 50px var(--color-accent-glow);
+  
+  /* Card shadows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.15);
+  --shadow-card-raised: 0 20px 60px rgba(0, 0, 0, 0.2);
+
+  /* ============================================
+     Z-INDEX SCALE
+     ============================================ */
+  --z-hide: -1;
+  --z-base: 0;
+  --z-raised: 1;
+  --z-dropdown: 10;
+  --z-sticky: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-popover: 400;
+  --z-tooltip: 500;
+  --z-max: 9999;
+
+  /* ============================================
+     LAYOUT
+     ============================================ */
+  --container-xs: 320px;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+  
+  /* Content width */
+  --content-width: min(90%, 1200px);
+  --content-width-narrow: min(85%, 800px);
+  --content-width-wide: min(95%, 1400px);
+  
+  /* Navbar height */
+  --navbar-height: 70px;
+  
+  /* Section padding */
+  --section-padding-y: clamp(3rem, 8vw, 6rem);
+
+  /* ============================================
+     BREAKPOINTS (for reference in JS)
+     ============================================ */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+}
+
+/* ============================================
+   DARK MODE OVERRIDES
+   Note: Disabled because site uses white cards on dark backgrounds
+   Card text should always be dark regardless of system theme
+   ============================================ */
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface: rgba(30, 30, 45, 0.95);
+    --color-surface-hover: rgba(40, 40, 60, 0.98);
+    --color-text-primary: #f4f4f5;
+    --color-text-secondary: #a1a1aa;
+    --color-text-muted: rgba(244, 244, 245, 0.7);
+  }
+}
+*/
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-xs: 0ms;
+    --duration-sm: 0ms;
+    --duration-md: 0ms;
+    --duration-lg: 0ms;
+    --duration-xl: 0ms;
+    --duration-75: 0ms;
+    --duration-100: 0ms;
+    --duration-150: 0ms;
+    --duration-200: 0ms;
+    --duration-300: 0ms;
+    --duration-500: 0ms;
+    --duration-700: 0ms;
+    --duration-1000: 0ms;
+  }
+}

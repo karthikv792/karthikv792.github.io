@@ -1,0 +1,405 @@
+/**
+ * Ambient Effects CSS
+ * Premium visual polish without parallax
+ * 
+ * Features:
+ * - Grain overlay
+ * - Gradient backgrounds
+ * - Glow effects
+ * - Animated dividers
+ */
+
+/* ============================================
+   GRAIN OVERLAY
+   Subtle texture for depth
+   ============================================ */
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-max);
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Animated grain for more organic feel */
+.grain-overlay.animated {
+  animation: grain-shift 8s steps(10) infinite;
+}
+
+@keyframes grain-shift {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* ============================================
+   GRADIENT BACKGROUNDS
+   Soft, ambient atmosphere
+   ============================================ */
+
+.gradient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Default gradient - deep blues */
+.gradient-bg::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(
+    ellipse at 20% 30%,
+    rgba(42, 157, 143, 0.15) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    ellipse at 80% 70%,
+    rgba(230, 57, 70, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    ellipse at 50% 50%,
+    rgba(38, 70, 83, 0.2) 0%,
+    transparent 70%
+  ),
+  linear-gradient(
+    180deg,
+    #0d1117 0%,
+    #161b22 50%,
+    #0d1117 100%
+  );
+}
+
+/* Slow ambient animation */
+.gradient-bg.animated::before {
+  animation: gradient-drift 30s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-5%, 2%) rotate(1deg) scale(1.02);
+  }
+  100% {
+    transform: translate(3%, -3%) rotate(-1deg) scale(1);
+  }
+}
+
+/* Lighter variant for sections with backgrounds */
+.gradient-bg.light::before {
+  background: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(244, 162, 97, 0.08) 0%,
+    transparent 40%
+  ),
+  radial-gradient(
+    ellipse at 70% 80%,
+    rgba(42, 157, 143, 0.06) 0%,
+    transparent 40%
+  );
+}
+
+/* ============================================
+   GLOW EFFECTS
+   ============================================ */
+
+/* Element glow on hover */
+.glow-on-hover {
+  position: relative;
+}
+
+.glow-on-hover::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-primary),
+    var(--color-accent-secondary)
+  );
+  z-index: -1;
+  opacity: 0;
+  filter: blur(15px);
+  transition: opacity var(--duration-md) var(--ease-out);
+}
+
+.glow-on-hover:hover::after {
+  opacity: 0.5;
+}
+
+/* Pulsing glow */
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--color-accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--color-accent-glow), 0 0 60px var(--color-accent-glow);
+  }
+}
+
+/* Text glow */
+.text-glow {
+  text-shadow: 0 0 10px var(--color-accent-glow),
+               0 0 20px var(--color-accent-glow),
+               0 0 30px var(--color-accent-glow);
+}
+
+/* ============================================
+   ANIMATED DIVIDERS
+   ============================================ */
+
+.divider-line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin: var(--space-12) 0;
+  overflow: hidden;
+}
+
+.divider-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent-primary) 20%,
+    var(--color-accent-secondary) 80%,
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform var(--duration-lg) var(--ease-expo-out);
+}
+
+.divider-line.in-view::before {
+  transform: translateX(0);
+}
+
+/* Animated gradient divider */
+.divider-gradient {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent-primary),
+    var(--color-accent-secondary),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: gradient-flow 3s linear infinite;
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* Dotted divider */
+.divider-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-8) 0;
+}
+
+.divider-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-primary);
+  opacity: 0;
+  transform: scale(0);
+  animation: dot-appear var(--duration-md) var(--ease-spring) forwards;
+}
+
+.divider-dots span:nth-child(2) { animation-delay: 100ms; }
+.divider-dots span:nth-child(3) { animation-delay: 200ms; }
+.divider-dots span:nth-child(4) { animation-delay: 300ms; }
+.divider-dots span:nth-child(5) { animation-delay: 400ms; }
+
+@keyframes dot-appear {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   HIGHLIGHT SWEEP
+   Premium hover effect
+   ============================================ */
+
+.highlight-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-sweep::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: skewX(-15deg);
+  transition: left var(--duration-lg) var(--ease-out);
+}
+
+.highlight-sweep:hover::before {
+  left: 100%;
+}
+
+/* ============================================
+   CURSOR EFFECTS
+   ============================================ */
+
+/* Spotlight cursor follower */
+.spotlight-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity var(--duration-md) var(--ease-out);
+}
+
+.spotlight-container:hover .spotlight {
+  opacity: 1;
+}
+
+/* ============================================
+   FLOATING ELEMENTS
+   ============================================ */
+
+.float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.float-medium {
+  animation: float-medium 4s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: float-fast 3s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ============================================
+   BLURRED SHAPES
+   Abstract background elements
+   ============================================ */
+
+.blur-shape {
+  position: absolute;
+  border-radius: var(--radius-full);
+  filter: blur(80px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.blur-shape.primary {
+  background: var(--color-accent-primary);
+}
+
+.blur-shape.secondary {
+  background: var(--color-accent-secondary);
+}
+
+.blur-shape.tertiary {
+  background: var(--color-accent-tertiary);
+}
+
+/* ============================================
+   NOISE TEXTURE UTILITIES
+   ============================================ */
+
+.noise-light {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  opacity: 0.02;
+}
+
+.noise-medium {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  opacity: 0.04;
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .grain-overlay.animated,
+  .gradient-bg.animated::before,
+  .float-slow,
+  .float-medium,
+  .float-fast,
+  .glow-pulse {
+    animation: none;
+  }
+  
+  .gradient-flow {
+    animation: none;
+    background-position: center;
+  }
+}

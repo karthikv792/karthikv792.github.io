@@ -1,0 +1,342 @@
+/**
+ * View Transitions CSS
+ * Premium page transition effects using the View Transition API
+ * 
+ * Features:
+ * - Automatic cross-document transitions
+ * - Shared element morphs
+ * - Custom animation choreography
+ */
+
+/* ============================================
+   VIEW TRANSITION API - NAVIGATION
+   ============================================ */
+
+/* Enable view transitions for same-origin navigations */
+@view-transition {
+  navigation: auto;
+}
+
+/* ============================================
+   DEFAULT PAGE TRANSITIONS
+   ============================================ */
+
+/* Old page (leaving) */
+::view-transition-old(root) {
+  animation: page-fade-out var(--duration-md) var(--ease-expo-out) forwards;
+}
+
+/* New page (entering) */
+::view-transition-new(root) {
+  animation: page-fade-in var(--duration-md) var(--ease-expo-out) forwards;
+}
+
+@keyframes page-fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+    filter: blur(4px);
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* ============================================
+   SHARED ELEMENT TRANSITIONS
+   ============================================ */
+
+/* Hero section - persistent across pages */
+.hero-name {
+  view-transition-name: hero-name;
+}
+
+::view-transition-old(hero-name),
+::view-transition-new(hero-name) {
+  animation-duration: var(--duration-lg);
+  animation-timing-function: var(--ease-spring);
+}
+
+/* Project cards → Project detail morph */
+.project-card {
+  view-transition-name: var(--vt-name);
+  contain: layout;
+}
+
+.project-hero {
+  view-transition-name: project-hero;
+}
+
+::view-transition-old(project-hero),
+::view-transition-new(project-hero) {
+  animation-duration: 500ms;
+  animation-timing-function: var(--ease-expo-out);
+  mix-blend-mode: normal;
+}
+
+/* Navbar - stays fixed during transition */
+.navbar {
+  view-transition-name: navbar;
+}
+
+::view-transition-old(navbar),
+::view-transition-new(navbar) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* ============================================
+   DIRECTIONAL TRANSITIONS
+   Based on navigation direction
+   ============================================ */
+
+/* Forward navigation (deeper into site) */
+:root:has(.forward-nav) {
+  &::view-transition-old(root) {
+    animation-name: slide-out-left;
+  }
+  &::view-transition-new(root) {
+    animation-name: slide-in-right;
+  }
+}
+
+/* Back navigation */
+:root:has(.back-nav) {
+  &::view-transition-old(root) {
+    animation-name: slide-out-right;
+  }
+  &::view-transition-new(root) {
+    animation-name: slide-in-left;
+  }
+}
+
+@keyframes slide-out-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============================================
+   SECTION TRANSITIONS
+   For smooth section navigation
+   ============================================ */
+
+.section-title {
+  view-transition-name: section-title;
+}
+
+.section-content {
+  view-transition-name: section-content;
+}
+
+::view-transition-group(section-title) {
+  animation-duration: var(--duration-md);
+}
+
+::view-transition-group(section-content) {
+  animation-duration: var(--duration-lg);
+  animation-delay: 100ms;
+}
+
+/* ============================================
+   CARD EXPAND TRANSITION
+   Click card → Full view morph
+   ============================================ */
+
+.expandable-card {
+  view-transition-name: expandable-card;
+  cursor: pointer;
+}
+
+.expanded-view {
+  view-transition-name: expandable-card;
+}
+
+::view-transition-old(expandable-card) {
+  animation: card-shrink var(--duration-md) var(--ease-expo-out) forwards;
+}
+
+::view-transition-new(expandable-card) {
+  animation: card-expand var(--duration-md) var(--ease-expo-out) forwards;
+}
+
+@keyframes card-shrink {
+  from {
+    border-radius: var(--radius-lg);
+  }
+  to {
+    border-radius: 0;
+  }
+}
+
+@keyframes card-expand {
+  from {
+    border-radius: var(--radius-lg);
+  }
+  to {
+    border-radius: 0;
+  }
+}
+
+/* ============================================
+   IMAGE TRANSITIONS
+   ============================================ */
+
+.gallery-image {
+  view-transition-name: gallery-image;
+}
+
+::view-transition-old(gallery-image) {
+  animation: image-out var(--duration-md) var(--ease-out) forwards;
+}
+
+::view-transition-new(gallery-image) {
+  animation: image-in var(--duration-md) var(--ease-out) forwards;
+}
+
+@keyframes image-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes image-in {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   LOADING STATE DURING TRANSITION
+   ============================================ */
+
+.view-transition-loading {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-max);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-primary);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-sm) var(--ease-out);
+}
+
+.view-transition-loading.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.view-transition-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-surface-dark);
+  border-top-color: var(--color-accent-primary);
+  border-radius: var(--radius-full);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   FALLBACK FOR BROWSERS WITHOUT SUPPORT
+   ============================================ */
+
+@supports not (view-transition-name: none) {
+  .page-transition-fallback {
+    animation: simple-fade-in var(--duration-md) var(--ease-out);
+  }
+  
+  @keyframes simple-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+  
+  @view-transition {
+    navigation: none;
+  }
+}

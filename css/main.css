@@ -1,0 +1,85 @@
+/**
+ * Premium Personal Website - Main CSS Entry Point
+ * 
+ * This file imports all modular CSS components in the correct order.
+ * Include this single file in your HTML instead of individual stylesheets.
+ * 
+ * Architecture:
+ * 1. tokens.css - Design tokens (colors, spacing, motion, etc.)
+ * 2. Component stylesheets - Modular, reusable styles
+ * 3. styles.css - Legacy/global styles
+ */
+
+/* ============================================
+   1. DESIGN TOKENS
+   Must be loaded first - defines all CSS variables
+   ============================================ */
+@import url('./tokens.css');
+
+/* ============================================
+   2. COMPONENT STYLES
+   Modular, reusable component styles
+   ============================================ */
+@import url('./components/view-transitions.css');
+@import url('./components/ambient.css');
+@import url('./components/typography.css');
+@import url('./components/cards.css');
+@import url('./components/buttons.css');
+
+/* ============================================
+   3. LEGACY STYLES
+   Original styles.css for backward compatibility
+   This is loaded last so it can override if needed
+   ============================================ */
+/* Note: If you want to use the new modular system exclusively,
+   you can remove this import and migrate styles gradually */
+
+/* ============================================
+   ADDITIONAL GLOBAL STYLES
+   ============================================ */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--color-accent-primary);
+  color: white;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Utility: Hide visually but keep for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Utility: Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-accent-primary);
+  color: white;
+  padding: var(--space-2) var(--space-4);
+  z-index: var(--z-max);
+  transition: top var(--duration-sm) var(--ease-out);
+}
+
+.skip-link:focus {
+  top: 0;
+}
