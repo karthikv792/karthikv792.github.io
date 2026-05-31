@@ -30,24 +30,17 @@ const PremiumComponents = {
       projectsReveal: true,
       sectionReveals: true,
       navbarScroll: true,
+      navbarToggle: true,
       grainOverlay: true,
-      viewTransitions: false, // Enable for multi-page sites
+      viewTransitions: false, // Single-page site uses anchor scroll, not VT
       ...options
     };
 
     console.log('🚀 Initializing Premium Website Components...');
 
     // Register GSAP plugins if available
-    if (typeof gsap !== 'undefined') {
-      if (typeof ScrollTrigger !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
-      }
-      if (typeof ScrollToPlugin !== 'undefined') {
-        gsap.registerPlugin(ScrollToPlugin);
-      }
-      if (typeof Flip !== 'undefined') {
-        gsap.registerPlugin(Flip);
-      }
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
     }
 
     // Initialize components based on options
@@ -85,6 +78,10 @@ const PremiumComponents = {
 
     if (defaultOptions.navbarScroll && typeof NavbarScroll !== 'undefined') {
       this.instances.navbarScroll = new NavbarScroll();
+    }
+
+    if (defaultOptions.navbarToggle && typeof NavbarToggle !== 'undefined') {
+      this.instances.navbarToggle = new NavbarToggle();
     }
 
     if (defaultOptions.viewTransitions && typeof ViewTransitions !== 'undefined') {

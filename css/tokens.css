@@ -61,18 +61,18 @@
      TYPOGRAPHY
      ============================================ */
   
-  /* Font families - matching legacy */
+  /* Font families - editorial trio (Gloock / DM Sans / Sacramento) */
   --font-display: 'Sacramento', Georgia, serif;
-  --font-heading: 'Gloock', 'Instrument Serif', Georgia, serif;
-  --font-body: 'DM Sans', 'Fredoka', system-ui, sans-serif;
-  --font-mono: 'Space Mono', 'Consolas', monospace;
+  --font-heading: 'Gloock', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Sans', 'Consolas', monospace;
   --font-accent: 'Sacramento', cursive;
-  
+
   /* Legacy font mapping - exact matches */
   --fontone: var(--font-heading);
   --fonttwo: 'Sacramento', var(--font-display);
   --fontthree: 'Gloock', var(--font-heading);
-  --fontfour: 'Fredoka', var(--font-body);
+  --fontfour: var(--font-body);
   
   /* Font sizes - fluid scale */
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);

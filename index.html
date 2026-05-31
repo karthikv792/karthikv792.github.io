@@ -4,55 +4,43 @@
   <meta charset='utf-8'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Dr. Karthik Valmeekam - AI Researcher specializing in LLMs, Planning, and Reasoning. PhD from Arizona State University.">
-  <title>KV's Personal Website | AI Researcher</title>
-  
+  <meta name="theme-color" content="#8C1515">
+  <title>Karthik Valmeekam — AI Researcher</title>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Karthik Valmeekam — AI Researcher">
+  <meta property="og:description" content="AI researcher working on LLMs, planning, and reasoning. PhD, Arizona State · IBM Fellow · Amazon AGI.">
+  <meta property="og:image" content="images/bgimage1.jpg">
+  <meta property="og:url" content="https://karthikv792.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@karthikv792">
+
   <!-- Preload critical resources -->
-  <link rel="preload" as="image" href="images/bgimage1.jpg">
+  <link rel="preload" as="image" href="images/bgimage1.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Fonts - Premium typography -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sacramento&family=Gloock&family=Fredoka&display=swap" rel="stylesheet">
-  
-  <!-- CSS - Bootstrap first, then modular components -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  
+
+  <!-- Fonts - editorial trio: Gloock (display), DM Sans (body), Sacramento (signature flourish) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sacramento&family=Gloock&display=swap" rel="stylesheet">
+
   <!-- Modular CSS - Design Tokens & Components -->
   <link rel='stylesheet' href='css/tokens.css'>
+  <link rel='stylesheet' href='css/utilities.css'>
   <link rel='stylesheet' href='css/components/view-transitions.css'>
   <link rel='stylesheet' href='css/components/ambient.css'>
   <link rel='stylesheet' href='css/components/typography.css'>
   <link rel='stylesheet' href='css/components/cards.css'>
   <link rel='stylesheet' href='css/components/buttons.css'>
   <link rel='stylesheet' href='css/styles.css'>
-  
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/d21ce2486e.js" crossorigin="anonymous" defer></script>
-  
-  <!-- Critical JS (jQuery needed for Bootstrap - must load synchronously) -->
-  <script src="scripts/jquery-3.6.0.min.js"></script>
-  
-  <!-- Bootstrap JS (no defer - required for navbar toggle to work) -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
-  
-  <!-- Lenis Smooth Scroll -->
+
+  <!-- Lenis Smooth Scroll (curated: buttery editorial scroll, pairs with GSAP) -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
-  
-  <!-- anime.js for letter animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
-  
-  <!-- GSAP + Plugins -->
+
+  <!-- GSAP core + ScrollTrigger (motion engine) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js" defer></script>
-  
+
   <!-- Modular JS Components -->
   <script src="js/components/config.js" defer></script>
   <script src="js/components/utils.js" defer></script>
@@ -65,11 +53,12 @@
   <script src="js/components/PublicationsFilter.js" defer></script>
   <script src="js/components/SectionReveals.js" defer></script>
   <script src="js/components/NavbarScroll.js" defer></script>
+  <script src="js/components/NavbarToggle.js" defer></script>
   <script src="js/components/ProjectsReveal.js" defer></script>
   <script src="js/components/GrainOverlay.js" defer></script>
   <script src="js/components/ViewTransitions.js" defer></script>
   <script src="js/components/index.js" defer></script>
-  
+
   <!-- Legacy main.js (for additional custom code) -->
   <script src="js/main.js" defer></script>
   
@@ -83,11 +72,12 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div id="scroll-progress-bar"></div>
   <!-- Premium Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark premium-nav">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark premium-nav" aria-label="Main navigation">
+  <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -103,7 +93,7 @@
         <a class="nav-link" href="#Education">Education</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#Learnings">Learnings</a>
+        <a class="nav-link" href="#Learnings">Experience</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#RandP">Research</a>
@@ -128,45 +118,57 @@
       <a class="nav-social-link" href="https://twitter.com/karthikv792" target="_blank" title="Twitter">
         <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"/></svg>
       </a>
+      <button id="themeToggle" class="nav-social-link theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,2L14.39,5.42C13.65,5.15 12.84,5 12,5C11.16,5 10.35,5.15 9.61,5.42L12,2M3.34,7L7.5,6.65C6.9,7.16 6.36,7.78 5.94,8.5C5.5,9.24 5.25,10 5.11,10.79L3.34,7M3.36,17L5.12,13.23C5.26,14 5.53,14.78 5.95,15.5C6.37,16.24 6.91,16.86 7.5,17.37L3.36,17M20.65,7L18.88,10.79C18.74,10 18.47,9.23 18.05,8.5C17.63,7.78 17.1,7.15 16.5,6.64L20.65,7M20.64,17L16.5,17.36C17.09,16.85 17.62,16.22 18.04,15.5C18.46,14.77 18.73,14 18.87,13.21L20.64,17M12,22L9.59,18.56C10.33,18.83 11.14,19 12,19C12.82,19 13.63,18.83 14.37,18.56L12,22Z"/></svg>
+      </button>
     </div>
   </div>
-</nav> 
-  
-  <!-- Main content will be inserted here -->
-  
+</nav>
+  </header>
+
+    <main id="main">
     <!-- Hero Section -->
     <section id="hiWindow" class="parallax-section glass-effect tmWelcome hero-section" style="background-image: url('images/bgimage1.jpg')">
   <div class="hero-content">
     <div class="hero-text">
-            <h3 class="titles1">Hello I'm</h3>
-            <h1 class="titles2">Valmeekam Karthik</h1>
-            <span class="blink_me">
-        <h3 class="scroll-hint">Scroll down <br>For a tour into my world</h3>
-        <i class="fas fa-arrow-circle-down scroll-arrow"></i>
-            </span>
+      <p class="hero-kicker">AI Researcher · Photographer · Storyteller</p>
+      <h1 class="titles2">Karthik<br>Valmeekam</h1>
+      <p class="hero-signature">Karthik</p>
+      <p class="hero-tagline">LLMs, planning, and reasoning.</p>
+      <p class="hero-affiliations">PhD, Arizona State <span aria-hidden="true">·</span> IBM Fellow <span aria-hidden="true">·</span> Amazon AGI</p>
+      <a class="hero-cta btn--magnetic" href="images/KV_CV.pdf" target="_blank">Download CV <span aria-hidden="true">(PDF)</span></a>
     </div>
   </div>
-</section> 
+  <a class="hero-scroll-cue" href="#About" aria-label="Scroll to content">
+    <svg viewBox="0 0 24 24" width="28" height="28"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+  </a>
+</section>
 <section id="About" class="parallax-section glass-effect tmWelcome" style="background-image: url('images/water.JPG')">
     <div class="container-fluid">
       <!-- Section Header -->
-      <div class="section-header">
-        <h2 class="animate-letters rotatetext"> I am a
-          <span class="txt-rotate" data-period="1000" data-rotate='[ "Student!","Researcher!","Programmer!","Storyteller!" ]'></span>
-        </h2>
+      <div class="section-header chapter-header">
+        <span class="chapter-num" aria-hidden="true">01</span>
+        <h2 class="chapter-label">About</h2>
+        <p class="chapter-kicker">The story so far — I am a
+          <span class="txt-rotate" data-period="1000" data-rotate='[ "Researcher!","Programmer!","Storyteller!","Photographer!" ]'></span>
+        </p>
       </div>
+
+      <!-- Opening pull quote -->
+      <blockquote class="pull-quote">
+        Rigorously formalized ideas are great stories to tell.
+      </blockquote>
 
       <!-- Bento Grid Layout -->
       <div class="bento-grid bento-about-grid">
         <!-- Bio Card - Large -->
         <div class="bento-card bento-xlarge glass-card scroll-triggered">
           <div class="bento-card-header">
-            <span class="bento-icon">📖</span>
             <h3>My Story</h3>
           </div>
-          <div class="bento-card-content">
-            <p>I was born in <a href="">Hyderabad, India</a> but my childhood was shaped by two vastly different places; the sub-tropical highlands of <a href="https://en.wikipedia.org/wiki/Addis_Ababa">Addis Ababa, Ethiopia</a> (from K.G. to 5th Grade) and the sun-scorching deserts of <a href="https://en.wikipedia.org/wiki/Ibra">Ibra, Oman</a> (5th to 10th Grade). Wherever I went, I carried my love for stories and thought of myself as a storyteller.</p>
-            <p>After my frivolous attempt at cracking the JEE, I joined <a href="">Vellore Institute of Technology</a> to explore and tell stories about Computers and Algorithms. During my Masters at Arizona State University, I discovered that rigorously formalized ideas are great stories to tell! That drove me to pursue research under the guidance of <a href="https://rakaposhi.eas.asu.edu/">Prof. Subbarao Kambhampati</a>.</p>
+          <div class="bento-card-content has-dropcap">
+            <p>I was born in Hyderabad, India but my childhood was shaped by two vastly different places; the sub-tropical highlands of <a href="https://en.wikipedia.org/wiki/Addis_Ababa">Addis Ababa, Ethiopia</a> (from K.G. to 5th Grade) and the sun-scorching deserts of <a href="https://en.wikipedia.org/wiki/Ibra">Ibra, Oman</a> (5th to 10th Grade). Wherever I went, I carried my love for stories and thought of myself as a storyteller.</p>
+            <p>After my frivolous attempt at cracking the JEE, I joined <a href="https://vit.ac.in/" target="_blank" rel="noopener">Vellore Institute of Technology</a> to explore and tell stories about Computers and Algorithms. During my Masters at Arizona State University, I discovered that rigorously formalized ideas are great stories to tell! That drove me to pursue research under the guidance of <a href="https://rakaposhi.eas.asu.edu/">Prof. Subbarao Kambhampati</a>.</p>
             <p>Currently, my world revolves around Large Language Models (LLMs) and Planning. While many were caught up in the hype of LLMs' supposed planning capabilities—or panicking about them taking over the world—I was busy helping my group cut through the noise and <a href="https://x.com/rao2z/status/1832786199972565479">ground the conversation</a>. My efforts earned me the prestigious 🏆 <a href="https://research.ibm.com/university/awards/fellowships-awardees.html">IBM PhD Fellowship Award (2024)</a> 🏆 in recognition of my work on the reasoning and planning abilities of LLMs.</p>
             <p>When I'm not immersed in research, I channel my creativity into screenwriting, dancing, photography, and playing the keyboard. I also enjoy listening to a wide variety of music, ranging from heavy metal to carnatic ragas.</p>
           </div>
@@ -175,7 +177,6 @@
         <!-- Twitter Card - Medium -->
         <div class="bento-card bento-medium glass-card scroll-triggered">
           <div class="bento-card-header">
-            <span class="bento-icon">🐦</span>
             <h3>Featured</h3>
           </div>
           <div class="bento-card-content tweet-wrapper">
@@ -189,7 +190,6 @@
         <!-- Award Card - Small -->
         <div class="bento-card bento-small glass-card scroll-triggered">
           <div class="bento-card-header">
-            <span class="bento-icon">🏆</span>
             <h3>Recognition</h3>
           </div>
           <div class="bento-card-content">
@@ -204,28 +204,27 @@
         <!-- News Card - Full Width -->
         <div class="bento-card bento-full glass-card scroll-triggered">
           <div class="bento-card-header">
-            <span class="bento-icon">📰</span>
             <h3>Latest News</h3>
           </div>
           <div class="bento-card-content">
-            <table class="news-table">
-              <tr>
-                <th class="news-date-cell">Nov 2025</th>
-                <td class="news-text-cell">Finally became <strong>Dr. Karthik Valmeekam</strong>! 🎓</td>
-            </tr>
-            <tr>
-                <th class="news-date-cell">Apr 2025</th>
-                <td class="news-text-cell"><a href="https://arxiv.org/abs/2504.09762">"(How) Do reasoning models reason?"</a> → NYAS</td>
-            </tr>
-            <tr>
-                <th class="news-date-cell">Mar 2025</th>
-                <td class="news-text-cell"><a href="https://openreview.net/forum?id=FkKBxp0FhR">"Systematic Evaluation of o1"</a> → TMLR 2025</td>
-            </tr>
-            <tr>
-                <th class="news-date-cell">Jan 2025</th>
-                <td class="news-text-cell"><a href="https://arxiv.org/abs/2402.08115">"Self-Verification Limitations of LLMs"</a> → ICLR 2025</td>
-            </tr>
-          </table>
+            <ul class="news-list">
+              <li class="news-item">
+                <time class="news-date" datetime="2025-11">Nov 2025</time>
+                <span class="news-text">Finally became <strong>Dr. Karthik Valmeekam</strong>! 🎓</span>
+              </li>
+              <li class="news-item">
+                <time class="news-date" datetime="2025-04">Apr 2025</time>
+                <span class="news-text"><a href="https://arxiv.org/abs/2504.09762">"(How) Do reasoning models reason?"</a> → NYAS</span>
+              </li>
+              <li class="news-item">
+                <time class="news-date" datetime="2025-03">Mar 2025</time>
+                <span class="news-text"><a href="https://openreview.net/forum?id=FkKBxp0FhR">"Systematic Evaluation of o1"</a> → TMLR 2025</span>
+              </li>
+              <li class="news-item">
+                <time class="news-date" datetime="2025-01">Jan 2025</time>
+                <span class="news-text"><a href="https://arxiv.org/abs/2402.08115">"Self-Verification Limitations of LLMs"</a> → ICLR 2025</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -235,8 +234,10 @@
   <section id="Education" class="parallax-section glass-effect tmWelcome" style="background-image: url('images/IMG_6059.jpg')">
     <div class="container-fluid">
       <!-- Section Header -->
-      <div class="section-header">
-        <h2 class="animate-letters">Passing through the Academic Jungle</h2>
+      <div class="section-header chapter-header">
+        <span class="chapter-num" aria-hidden="true">02</span>
+        <h2 class="chapter-label animate-letters">Education</h2>
+        <p class="chapter-kicker">Passing through the academic jungle</p>
       </div>
 
       <!-- Timeline Bento Layout -->
@@ -328,8 +329,10 @@
   <section id="Learnings" class="parallax-section glass-effect tmWelcome" style="background-image: url('images/learning.jpg')">
     <div class="container-fluid">
       <!-- Section Header -->
-      <div class="section-header">
-        <h2 class="animate-letters">Learning - A continuous process</h2>
+      <div class="section-header chapter-header">
+        <span class="chapter-num" aria-hidden="true">03</span>
+        <h2 class="chapter-label animate-letters">Experience</h2>
+        <p class="chapter-kicker">Learning never stops</p>
       </div>
 
       <!-- Experience Bento -->
@@ -337,7 +340,6 @@
         <!-- Amazon Current -->
         <div class="bento-card bento-medium glass-card scroll-triggered">
           <div class="bento-card-header">
-            <span class="bento-icon">🚀</span>
             <h3>Current Role</h3>
               </div>
           <div class="bento-card-content">
@@ -355,7 +357,6 @@
         <!-- Amazon Intern -->
         <div class="bento-card bento-medium glass-card scroll-triggered">
           <div class="bento-card-header">
-            <span class="bento-icon">🔬</span>
             <h3>Previous Experience</h3>
       </div>
           <div class="bento-card-content">
@@ -371,94 +372,45 @@
         </div>
       </div>
 
-      <!-- Skills Grid -->
+      <!-- Skills Index -->
       <div class="skills-section">
-        <h3 class="skills-header">Skills & Technologies</h3>
-        <div class="skills-grid">
-          <!-- Programming Languages -->
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">💻</span>
-            <span class="skill-name">Python</span>
+        <h3 class="skills-header">Skills &amp; Technologies</h3>
+        <dl class="skills-index">
+          <div class="skills-row scroll-triggered">
+            <dt class="skills-category">Languages</dt>
+            <dd class="skills-list">Python · C++ · JavaScript · SQL · Bash</dd>
           </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">⚡</span>
-            <span class="skill-name">C++</span>
+          <div class="skills-row scroll-triggered">
+            <dt class="skills-category">ML &amp; Research</dt>
+            <dd class="skills-list">PyTorch · TensorFlow · HuggingFace · OpenCV · ROS</dd>
           </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">🌐</span>
-            <span class="skill-name">JavaScript</span>
+          <div class="skills-row scroll-triggered">
+            <dt class="skills-category">Infra &amp; Tools</dt>
+            <dd class="skills-list">Docker · Kubernetes · AWS · Premiere Pro · Photoshop</dd>
           </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">🗃️</span>
-            <span class="skill-name">SQL</span>
-          </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">🐚</span>
-            <span class="skill-name">Bash</span>
-          </div>
-          <!-- Frameworks -->
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">🤗</span>
-            <span class="skill-name">HuggingFace</span>
-          </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">🔥</span>
-            <span class="skill-name">PyTorch</span>
-          </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">🧠</span>
-            <span class="skill-name">TensorFlow</span>
-          </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">👁️</span>
-            <span class="skill-name">OpenCV</span>
-          </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">🤖</span>
-            <span class="skill-name">ROS</span>
-          </div>
-          <!-- Tools -->
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">🐳</span>
-            <span class="skill-name">Docker</span>
-          </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">☸️</span>
-            <span class="skill-name">Kubernetes</span>
-          </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">☁️</span>
-            <span class="skill-name">AWS</span>
-          </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">🎬</span>
-            <span class="skill-name">Premiere Pro</span>
-          </div>
-          <div class="skill-card glass-card scroll-triggered">
-            <span class="skill-icon">🎨</span>
-            <span class="skill-name">Photoshop</span>
-          </div>
-        </div>
+        </dl>
       </div>
     </div>
   </section>
   <section id="RandP" class="parallax-section glass-effect tmWelcome" style="background-image: url('images/endof.jpg')">
     <div class="container-fluid">
       <!-- Section Header -->
-      <div class="section-header">
-        <h2 class="animate-letters">Execution - That's how dreams become reality</h2>
+      <div class="section-header chapter-header">
+        <span class="chapter-num" aria-hidden="true">04</span>
+        <h2 class="chapter-label animate-letters">Research</h2>
+        <p class="chapter-kicker">Formalizing curiosity</p>
       </div>
 
       <!-- Publications Bento Card -->
       <div class="pub-container glass-card">
         <div class="pub-header">
           <div class="pub-title-row">
-            <h3>📚 Publications</h3>
+            <h3>Publications</h3>
             <a href="https://scholar.google.com/citations?user=CrYLDt4AAAAJ&hl=en" target="_blank" class="scholar-link">
               Google Scholar →
                   </a>
                 </div>
-          <p class="pub-subtitle">*Formalizing Curiosity*</p>
+          <p class="pub-subtitle">Selected work on the reasoning &amp; planning abilities of LLMs</p>
         </div>
 
         <div class="pub-list">
@@ -524,7 +476,7 @@
             <span class="pub-year">2024</span>
             <span class="pub-venue">ICML</span>
             <a href="https://arxiv.org/abs/2402.01817" target="_blank" class="pub-title-link">LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks</a>
-            <span class="pub-spotlight">🔦 Spotlight</span>
+            <span class="pub-spotlight">Spotlight</span>
             <div class="pub-details">
               <span class="pub-authors">Subbarao Kambhampati, <u>Karthik Valmeekam</u>, Lin Guan, Kaya Stechly, et al.</span>
             </div>
@@ -544,7 +496,7 @@
             <span class="pub-year">2023</span>
             <span class="pub-venue">NeurIPS</span>
             <a href="https://arxiv.org/abs/2305.15771" target="_blank" class="pub-title-link">On the Planning Abilities of Large Language Models--A Critical Investigation</a>
-            <span class="pub-spotlight">🔦 Spotlight</span>
+            <span class="pub-spotlight">Spotlight</span>
             <div class="pub-details">
               <span class="pub-authors"><u>Karthik Valmeekam</u>, Matthew Marquez, Sarath Sreedharan, Subbarao Kambhampati</span>
             </div>
@@ -601,38 +553,31 @@
       <!-- Projects Section -->
       <div class="projects-container glass-card" style="margin-top: 2rem;">
         <div class="pub-header">
-          <h3>🚀 Projects</h3>
-          <p class="pub-subtitle">*Get the engine started.*</p>
+          <h3>Projects</h3>
+          <p class="pub-subtitle">Getting the engine started</p>
     </div>
         <div class="projects-grid">
           <a href="https://github.com/karthikv792/LLMs-Planning" target="_blank" class="project-card scroll-triggered">
-            <span class="project-icon">🔥</span>
             <span class="project-name">LLMs for Planning</span>
-            <span id="github-stars" class="project-stars">Loading...</span>
+            <span id="github-stars" class="project-stars">GitHub repo</span>
           </a>
           <a href="https://github.com/karthikv792/RL-for-Imperfect-Info-Games" target="_blank" class="project-card scroll-triggered">
-            <span class="project-icon">🎮</span>
             <span class="project-name">RL for Imperfect Info Games</span>
           </a>
           <a href="https://github.com/karthikv792/TORCS_SAC_PYTORCH" target="_blank" class="project-card scroll-triggered">
-            <span class="project-icon">🏎️</span>
             <span class="project-name">Autonomous Drifting with DRL</span>
           </a>
           <a href="https://github.com/karthikv792/NashQ" target="_blank" class="project-card scroll-triggered">
-            <span class="project-icon">♟️</span>
             <span class="project-name">Nash Q Learning</span>
           </a>
           <a href="https://github.com/karthikv792/PDDL-parser" target="_blank" class="project-card scroll-triggered">
-            <span class="project-icon">📝</span>
             <span class="project-name">PDDL Parser</span>
           </a>
           <a href="https://hopeful-brahmagupta-b552a0.netlify.app/" target="_blank" class="project-card scroll-triggered">
-            <span class="project-icon">🐕</span>
-            <span class="project-name">Paws in Space - DataViz</span>
+            <span class="project-name">Paws in Space — DataViz</span>
           </a>
           <a href="https://wonderful-zuccutto-9c2fd2.netlify.app/" target="_blank" class="project-card scroll-triggered">
-            <span class="project-icon">♟️</span>
-            <span class="project-name">Chess Openings - DataViz</span>
+            <span class="project-name">Chess Openings — DataViz</span>
           </a>
       </div>
     </div>
@@ -640,57 +585,18 @@
 </section> 
   
   
-  <!-- Footer -->
-  <section id="tmWelcome" class="parallax-section glass-effect footer-section" style="background-image: url('images/allineed.JPG')">
-    <div class="container-fluid scroll-triggered justify-content-center text-center">
-      <div class="footer-bento">
-        <div class="bento-card glass-card footer-card">
-          <div class="bento-card-header">
-            <span class="bento-icon">📸</span>
-            <h3>Behind the Lens</h3>
-          </div>
-          <div class="bento-card-content">
-            <p class="footer-text">*All the background images are captured by me<br><span class="footer-note">(with the obvious exception of the first one)</span></p>
-          </div>
-        </div>
+    </main>
+
+  <!-- Footer / Photographer's Colophon -->
+  <footer id="tmWelcome" class="parallax-section glass-effect footer-section tmWelcome" style="background-image: url('images/allineed.JPG')">
+    <div class="container-fluid">
+      <div class="colophon scroll-triggered">
+        <p class="colophon-eyebrow">Colophon</p>
+        <p class="colophon-text">Every background photograph on this site was captured by me<span class="footer-note"> — with the obvious exception of the first.</span></p>
+        <p class="colophon-sign">Karthik Valmeekam</p>
       </div>
     </div>
-  </section>
-  
-  <!-- Navigation active state (jQuery) -->
-  <script>
-    $(document).ready(function() {
-      // Active link on scroll
-      $(window).scroll(function () {
-        var distance = $(window).scrollTop();
-        $('.tmWelcome').each(function (i) {
-          if ($(this).position().top <= distance + 250) {
-            $('.navbar-nav a.active').removeClass('active');
-            $('.navbar-nav a').eq(i).addClass('active');
-          }
-        });
-      }).scroll();
-    });
-
-    // GitHub stars fetcher
-    async function fetchGitHubStars() {
-      try {
-        const response = await fetch('https://api.github.com/repos/karthikv792/LLMs-Planning');
-        const data = await response.json();
-        const starsElement = document.getElementById('github-stars');
-        if (starsElement) {
-          starsElement.textContent = `★ ${data.stargazers_count} stars`;
-        }
-      } catch (error) {
-        console.error('Error fetching GitHub stars:', error);
-        const starsElement = document.getElementById('github-stars');
-        if (starsElement) {
-          starsElement.textContent = 'GitHub repo';
-        }
-      }
-    }
-    document.addEventListener('DOMContentLoaded', fetchGitHubStars);
-  </script>
+  </footer>
 
 </body>
-</html> 
+</html>

@@ -6,12 +6,7 @@
 /* ============================================
    IMPORTS & FONTS
    ============================================ */
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Sacramento');
-@import url('https://fonts.googleapis.com/css?family=Gloock');
-@import url('https://fonts.googleapis.com/css?family=Fredoka');
+/* Fonts are loaded via <link> in index.html (Gloock / DM Sans / Sacramento) */
 
 /* ============================================
    CSS CUSTOM PROPERTIES (Design Tokens)
@@ -43,15 +38,15 @@
   
   /* Typography */
   --font-display: 'Sacramento', Georgia, serif;
-  --font-heading: 'Gloock', 'Instrument Serif', Georgia, serif;
-  --font-body: 'DM Sans', 'Fredoka', system-ui, sans-serif;
-  --font-mono: 'Space Mono', 'Consolas', monospace;
-  
+  --font-heading: 'Gloock', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Sans', 'Consolas', monospace;
+
   /* Legacy font mapping */
   --fontone: var(--font-heading);
   --fonttwo: 'Sacramento', var(--font-display);
   --fontthree: 'Gloock', var(--font-heading);
-  --fontfour: 'Fredoka', var(--font-body);
+  --fontfour: var(--font-body);
   
   /* Spacing scale */
   --space-xs: 0.25rem;
@@ -690,6 +685,9 @@ body::before {
   position: relative;
 }
 
+/* ============================================
+   HERO — "BOOK COVER" EDITORIAL LAYOUT
+   ============================================ */
 .hero-content {
   width: 100%;
   height: 100%;
@@ -697,58 +695,134 @@ body::before {
   align-items: flex-end;
   justify-content: flex-end;
   padding: 4rem;
-  padding-bottom: 10vh;
-  padding-right: 17vw;
+  padding-bottom: 12vh;
+  padding-right: 12vw;
+}
+
+/* Gradient scrim so the type never sits on raw photo */
+#hiWindow.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(10, 10, 15, 0) 35%,
+    rgba(10, 10, 15, 0.45) 70%,
+    rgba(10, 10, 15, 0.72) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-text {
+  position: relative;
+  z-index: 1;
   text-align: right;
-  max-width: 600px;
-  text-shadow: 0 6px 22px var(--text-shadow-color);
+  max-width: 620px;
 }
 
-.titles1 {
-  font-family: var(--font-heading);
-  color: white;
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
-  text-shadow: 0 6px 22px var(--text-shadow-color);
-  margin-bottom: 0.25rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
+.hero-kicker {
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 1.4vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 1.1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .titles2 {
-  font-family: var(--font-display);
-  color: white;
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  letter-spacing: 0.02em;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-}
-
-.scroll-hint {
   font-family: var(--font-heading);
+  color: #fff;
+  font-size: clamp(2.8rem, 9vw, 6rem);
+  line-height: 0.96;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-shadow: 0 6px 40px rgba(0, 0, 0, 0.45);
+}
+
+.hero-signature {
+  font-family: var(--font-display);
+  color: var(--color-accent, #B32336);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height: 1;
+  margin: 0.1rem 0 1.4rem;
+  transform: rotate(-4deg);
+  transform-origin: right center;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.hero-tagline {
+  font-family: var(--font-body);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin: 0 0 1rem;
+}
+
+.hero-affiliations {
+  font-family: var(--font-body);
+  font-size: clamp(0.72rem, 1.5vw, 0.86rem);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 2rem;
+}
+.hero-affiliations span { color: var(--color-accent, #B32336); margin: 0 0.4em; }
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5ch;
+  font-family: var(--font-body);
   font-size: 0.9rem;
-  color: white;
-  opacity: 0.7;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.85rem 1.6rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background var(--duration-sm) var(--ease-out),
+              border-color var(--duration-sm) var(--ease-out),
+              color var(--duration-sm) var(--ease-out);
+  will-change: transform;
+}
+.hero-cta span { opacity: 0.7; font-size: 0.78em; }
+.hero-cta:hover,
+.hero-cta:focus-visible {
+  background: var(--color-accent, #B32336);
+  border-color: var(--color-accent, #B32336);
+  color: #fff;
 }
 
-.scroll-arrow {
-  color: white;
-  font-size: 1.25rem;
-  opacity: 0.7;
+/* Scroll cue chevron, bottom-centered, gentle bob */
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.7);
+  animation: heroCueBob 2.4s ease-in-out infinite;
+}
+.hero-scroll-cue:hover { color: #fff; }
+
+@keyframes heroCueBob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 8px); }
 }
 
-/* Scroll hint blink */
-.blink_me {
-  animation: blinker 3s ease-in-out infinite;
-}
-
-@keyframes blinker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-cue { animation: none; }
 }
 
 /* ============================================
@@ -2483,5 +2557,228 @@ img {
   a {
     color: black;
     text-decoration: underline;
+  }
+}
+/* ============================================================
+   EDITORIAL SYSTEM — chapters, eyebrows, drop cap, pull quote,
+   skills index, news list, colophon, focus states.
+   (Added in the editorial photo-essay redesign.)
+   ============================================================ */
+
+/* ---- Numbered chapter headers ---- */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.chapter-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+  text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+}
+.chapter-label {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  line-height: 1.05;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 0.4);
+}
+.chapter-kicker {
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0.9rem 0 0;
+}
+/* The rotating word inside About's kicker keeps its cursive flourish */
+.chapter-kicker .txt-rotate {
+  text-transform: none;
+  letter-spacing: 0;
+  vertical-align: baseline;
+}
+
+/* ---- Pull quote (one per page) ---- */
+.pull-quote {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0.4rem 0 0.4rem 1.6rem;
+  border-left: 3px solid var(--color-accent, #B32336);
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3.4vw, 2.2rem);
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.95);
+  font-style: normal;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.45);
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Drop cap on the bio's first paragraph ---- */
+.has-dropcap > p:first-of-type::first-letter {
+  font-family: var(--font-heading);
+  font-size: 3.4em;
+  line-height: 0.8;
+  float: left;
+  margin: 0.06em 0.12em 0 0;
+  color: var(--color-accent, #B32336);
+}
+
+/* ---- Skills as a typographic index ---- */
+.skills-header {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.skills-index {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.skills-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.skills-row:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+.skills-category {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent, #B32336);
+  margin: 0;
+}
+.skills-list {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---- News as a semantic list ---- */
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.news-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.news-item:last-child { border-bottom: none; }
+.news-date {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent, #B32336);
+  white-space: nowrap;
+}
+.news-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+}
+.news-text a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---- Photographer's colophon (footer) ---- */
+.footer-section { display: flex; align-items: center; }
+.colophon {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.colophon-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+}
+.colophon-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 1.2rem;
+}
+.colophon-text .footer-note { color: rgba(255, 255, 255, 0.6); font-style: italic; }
+.colophon-sign {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--color-accent, #B32336);
+  margin: 0;
+  transform: rotate(-3deg);
+}
+
+/* ---- Theme toggle button ---- */
+.theme-toggle {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ---- Unified focus-visible (keyboard) ---- */
+:where(a, button, .bento-card, .glass-card, .skill-card, .project-card,
+       .pub-item, .pub-title-link, .timeline-card, .nav-link,
+       .hero-cta, .scholar-link):focus-visible {
+  outline: 2px solid var(--color-accent, #B32336);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm, 4px);
+}
+
+/* ---- Editorial mobile tweaks ---- */
+@media (max-width: 768px) {
+  .skills-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    padding: 1rem 0;
+  }
+  .news-item {
+    grid-template-columns: 90px 1fr;
+    gap: 0.75rem;
+  }
+  .pull-quote { font-size: 1.3rem; }
+  .hero-content {
+    padding: 2rem 1.5rem;
+    padding-bottom: 14vh;
+    justify-content: center;
+  }
+  .hero-text { text-align: center; max-width: 100%; }
+  .hero-signature { transform-origin: center; }
+  #hiWindow.hero-section::after {
+    background: linear-gradient(180deg, rgba(10,10,15,0) 30%, rgba(10,10,15,0.7) 100%);
   }
 }
