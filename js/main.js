@@ -20,7 +20,7 @@
 // ============================================
 // LENIS SMOOTH SCROLLING
 // ============================================
-const ENABLE_LENIS = true;
+const ENABLE_LENIS = false;
 let lenis = null;
 
 function initNativeSmoothScroll() {
