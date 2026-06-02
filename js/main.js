@@ -25,6 +25,10 @@ let lenis = null;
 
 function initNativeSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Nav links are handled by NavbarScroll — avoid double-binding (the two
+    // handlers raced and a stray scrollBy reset scroll to 0).
+    if (anchor.classList.contains('nav-link')) return;
+
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
       if (href === '#') return;
@@ -32,8 +36,8 @@ function initNativeSmoothScroll() {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        window.scrollBy(0, -80);
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
     });
   });

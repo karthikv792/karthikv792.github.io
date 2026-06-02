@@ -49,7 +49,7 @@ const PremiumComponents = {
     }
 
     if (defaultOptions.scrollProgress && typeof ScrollProgress !== 'undefined') {
-      this.instances.scrollProgress = new ScrollProgress();
+      this.instances.scrollProgress = new ScrollProgress({ showPips: false });
     }
 
     if (defaultOptions.heroTimeline && typeof HeroTimeline !== 'undefined') {
