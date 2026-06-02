@@ -25,6 +25,10 @@ let lenis = null;
 
 function initNativeSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Nav links are handled by NavbarScroll — avoid double-binding (the two
+    // handlers raced and a stray scrollBy reset scroll to 0).
+    if (anchor.classList.contains('nav-link')) return;
+
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
       if (href === '#') return;
@@ -32,8 +36,8 @@ function initNativeSmoothScroll() {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        window.scrollBy(0, -80);
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
     });
   });
@@ -114,51 +118,51 @@ window.goToTop = function() {
 // ANIME.JS LETTER ANIMATIONS
 // ============================================
 function initLetterAnimations() {
-  if (typeof anime === 'undefined') {
-    console.warn('anime.js not loaded');
-      return;
-    }
-
-  // Find all elements with .animate-letters class
   const textElements = document.querySelectorAll('.animate-letters');
-  
-  textElements.forEach((el, index) => {
+  if (textElements.length === 0) return;
+
+  const prefersReducedMotion = window.prefersReducedMotion ??
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGSAP = typeof gsap !== 'undefined';
+
+  textElements.forEach((el) => {
     // Skip elements that include rotating/handwriting text
     if (el.querySelector('.txt-rotate')) {
       return;
     }
+    // Reduced motion or no GSAP: leave text visible, untouched
+    if (prefersReducedMotion || !hasGSAP) {
+      return;
+    }
     // Get the text content
     const text = el.textContent.trim();
-    
+
     // Clear the element and wrap each letter in a span
     el.innerHTML = '';
-    
+
     text.split('').forEach((char) => {
       const span = document.createElement('span');
       span.className = 'letter';
       span.textContent = char === ' ' ? '\u00A0' : char; // Preserve spaces
       span.style.display = 'inline-block';
-      span.style.opacity = '0';
-      span.style.transform = 'translateY(30px) rotateX(-90deg)';
       el.appendChild(span);
     });
-    
+
+    const letters = el.querySelectorAll('.letter');
+    gsap.set(letters, { opacity: 0, yPercent: 60, rotateX: -90 });
+
     // Create intersection observer for scroll trigger
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Animate letters in with stagger
-          anime({
-            targets: el.querySelectorAll('.letter'),
-            opacity: [0, 1],
-            translateY: [30, 0],
-            rotateX: [-90, 0],
-            duration: 800,
-            delay: anime.stagger(25, { start: 200 + (index * 100) }),
-            easing: 'easeOutExpo'
+          gsap.to(letters, {
+            opacity: 1,
+            yPercent: 0,
+            rotateX: 0,
+            duration: 0.8,
+            ease: 'expo.out',
+            stagger: 0.025
           });
-          
-          // Stop observing after animation triggers
           observer.unobserve(entry.target);
         }
       });
@@ -166,10 +170,10 @@ function initLetterAnimations() {
       threshold: 0.1,
       rootMargin: '0px 0px -10% 0px'
     });
-    
+
     observer.observe(el);
   });
-  
+
   console.log('✨ Letter animations initialized for', textElements.length, 'elements');
 }
 
@@ -328,25 +332,6 @@ async function fetchGitHubStars() {
 }
 
 /**
- * Navigation Active State (jQuery for Bootstrap compatibility)
- * Note: This is also handled by NavbarScroll component,
- * but kept here for legacy Bootstrap integration
- */
-function initLegacyNavigation() {
-  if (typeof $ !== 'undefined') {
-    $(window).scroll(function () {
-      var distance = $(window).scrollTop();
-      $('.tmWelcome').each(function (i) {
-        if ($(this).position().top <= distance + 250) {
-          $('.navbar-nav a.active').removeClass('active');
-          $('.navbar-nav a').eq(i).addClass('active');
-        }
-      });
-    }).scroll();
-  }
-}
-
-/**
  * Copy Email to Clipboard with Toast
  */
 function initEmailCopy() {
@@ -451,26 +436,6 @@ function initLazyTwitter() {
 }
 
 /**
- * Keyboard Navigation Enhancements
- */
-function initKeyboardNav() {
-  // Skip to main content link
-  const skipLink = document.createElement('a');
-  skipLink.href = '#About';
-  skipLink.className = 'skip-link sr-only sr-only-focusable';
-  skipLink.textContent = 'Skip to main content';
-  document.body.insertBefore(skipLink, document.body.firstChild);
-  
-  skipLink.addEventListener('focus', () => {
-    skipLink.classList.remove('sr-only');
-  });
-  
-  skipLink.addEventListener('blur', () => {
-    skipLink.classList.add('sr-only');
-  });
-}
-
-/**
  * Scroll to Top Button
  */
 function initScrollToTop() {
@@ -484,7 +449,8 @@ function initScrollToTop() {
   `;
   document.body.appendChild(scrollBtn);
   
-  // Show/hide based on scroll position
+  // Show/hide based on scroll position (throttled)
+  const Utils = window.Utils || { throttle: (fn) => fn };
   const toggleVisibility = () => {
     if (window.scrollY > 500) {
       scrollBtn.classList.add('visible');
@@ -492,22 +458,18 @@ function initScrollToTop() {
       scrollBtn.classList.remove('visible');
     }
   };
-  
-  window.addEventListener('scroll', toggleVisibility);
+
+  window.addEventListener('scroll', Utils.throttle(toggleVisibility, 150));
   toggleVisibility();
-  
-  // Scroll to top on click
+
+  // Scroll to top on click (Lenis if present, else native)
   scrollBtn.addEventListener('click', () => {
-    if (typeof gsap !== 'undefined') {
-      gsap.to(window, {
-        duration: 0.8,
-        scrollTo: { y: 0, autoKill: true },
-        ease: 'power3.out'
-      });
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 0.8 });
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
+    }
+  });
   }
 
 /**
@@ -565,10 +527,9 @@ function initPerformanceMonitoring() {
 document.addEventListener('DOMContentLoaded', () => {
   // Custom functionality
   fetchGitHubStars();
-  initLegacyNavigation();
+  initThemeToggle();
   initEmailCopy();
   initLazyTwitter();
-  initKeyboardNav();
   initScrollToTop();
   initPrintStyles();
   initPerformanceMonitoring();

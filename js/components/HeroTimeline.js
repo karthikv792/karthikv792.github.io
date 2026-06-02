@@ -7,10 +7,13 @@ class HeroTimeline {
   constructor(options = {}) {
     this.options = {
       heroSelector: '#hiWindow',
-      greetingSelector: '.titles1',
+      kickerSelector: '.hero-kicker',
       nameSelector: '.titles2',
-      scrollHintSelector: '.blink_me',
-      rotateTextSelector: '.txt-rotate',
+      signatureSelector: '.hero-signature',
+      taglineSelector: '.hero-tagline',
+      affiliationsSelector: '.hero-affiliations',
+      ctaSelector: '.hero-cta',
+      scrollCueSelector: '.hero-scroll-cue',
       ...options
     };
 
@@ -25,75 +28,73 @@ class HeroTimeline {
   init() {
     const CONFIG = window.PremiumConfig || {
       duration: { sm: 0.25, md: 0.4, lg: 0.6 },
-      ease: { smooth: 'power3.out', elastic: 'elastic.out(1, 0.5)' }
+      ease: { smooth: 'power3.out', expo: 'expo.out' }
     };
 
-    const prefersReducedMotion = window.prefersReducedMotion ?? 
+    const prefersReducedMotion = window.prefersReducedMotion ??
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Get hero elements
-    const greeting = this.hero.querySelector(this.options.greetingSelector);
-    const name = this.hero.querySelector(this.options.nameSelector);
-    const scrollHint = this.hero.querySelector(this.options.scrollHintSelector);
+    const o = this.options;
+    const els = {
+      kicker: this.hero.querySelector(o.kickerSelector),
+      name: this.hero.querySelector(o.nameSelector),
+      signature: this.hero.querySelector(o.signatureSelector),
+      tagline: this.hero.querySelector(o.taglineSelector),
+      affiliations: this.hero.querySelector(o.affiliationsSelector),
+      cta: this.hero.querySelector(o.ctaSelector),
+      scrollCue: this.hero.querySelector(o.scrollCueSelector)
+    };
+    const ordered = [els.kicker, els.name, els.signature, els.tagline, els.affiliations, els.cta, els.scrollCue].filter(Boolean);
 
-    if (prefersReducedMotion) {
-      // Simple reveal for reduced motion
-      if (typeof gsap !== 'undefined') {
-        gsap.set([greeting, name, scrollHint].filter(Boolean), { opacity: 1, y: 0 });
-      }
-      return;
-    }
+    // Initialize scramble/handwriting text in About regardless of motion path
+    this.initScrambleText();
 
-    if (typeof gsap === 'undefined') {
-      // Fallback without GSAP
-      [greeting, name, scrollHint].filter(Boolean).forEach(el => {
+    if (prefersReducedMotion || typeof gsap === 'undefined') {
+      ordered.forEach(el => {
         el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
+        el.style.transform = 'none';
       });
       return;
     }
 
-    // Initial state
-    gsap.set([greeting, name, scrollHint].filter(Boolean), { opacity: 0, y: 30 });
+    gsap.set(ordered, { opacity: 0, y: 24 });
+    if (els.signature) gsap.set(els.signature, { opacity: 0, y: 24, rotate: -3 });
 
-    // Build master timeline
     this.timeline = gsap.timeline({
       defaults: { ease: CONFIG.ease.smooth }
     });
 
-    if (greeting) {
-      this.timeline.to(greeting, {
-        opacity: 1,
-        y: 0,
-        duration: CONFIG.duration.md
-      });
+    if (els.kicker) {
+      this.timeline.to(els.kicker, { opacity: 1, y: 0, duration: CONFIG.duration.md });
     }
-
-    if (name) {
-      this.timeline.to(name, {
-        opacity: 1,
-        y: 0,
-        duration: CONFIG.duration.lg,
-        ease: CONFIG.ease.elastic
-      }, greeting ? '-=0.2' : 0);
+    if (els.name) {
+      // The hero beat — bigger, expressive reveal
+      this.timeline.to(els.name, {
+        opacity: 1, y: 0, duration: CONFIG.duration.lg,
+        ease: CONFIG.ease.expo || 'expo.out'
+      }, '-=0.15');
     }
-
-    if (scrollHint) {
-      this.timeline.to(scrollHint, {
-        opacity: 1,
-        y: 0,
-        duration: CONFIG.duration.md
-      }, '-=0.3');
-
-      // Scroll hint fades out on scroll
-      this.setupScrollHintFade(scrollHint);
+    if (els.signature) {
+      this.timeline.to(els.signature, {
+        opacity: 1, y: 0, rotate: -4, duration: CONFIG.duration.lg, ease: 'power2.out'
+      }, '-=0.35');
     }
-
-    // Initialize scramble text if present (in About section)
-    this.initScrambleText();
+    if (els.tagline) {
+      this.timeline.to(els.tagline, { opacity: 1, y: 0, duration: CONFIG.duration.md }, '-=0.3');
+    }
+    if (els.affiliations) {
+      this.timeline.to(els.affiliations, { opacity: 1, y: 0, duration: CONFIG.duration.md }, '-=0.25');
+    }
+    if (els.cta) {
+      this.timeline.to(els.cta, { opacity: 1, y: 0, duration: CONFIG.duration.md }, '-=0.2');
+    }
+    if (els.scrollCue) {
+      this.timeline.to(els.scrollCue, { opacity: 1, y: 0, duration: CONFIG.duration.md }, '-=0.1');
+      this.setupScrollCueFade(els.scrollCue);
+    }
   }
 
-  setupScrollHintFade(scrollHint) {
+  setupScrollCueFade(scrollCue) {
     const CONFIG = window.PremiumConfig || { duration: { xs: 0.15 } };
 
     if (typeof ScrollTrigger !== 'undefined') {
@@ -102,7 +103,7 @@ class HeroTimeline {
         start: 'top top',
         end: 'bottom top',
         onUpdate: (self) => {
-          gsap.to(scrollHint, {
+          gsap.to(scrollCue, {
             opacity: Math.max(0, 1 - self.progress * 2),
             duration: CONFIG.duration.xs
           });

@@ -156,13 +156,9 @@ const Utils = {
     if (!element) return;
 
     const top = this.getOffset(element).top - offset;
-    
-    if (typeof gsap !== 'undefined' && gsap.to) {
-      gsap.to(window, {
-        duration: 0.8,
-        scrollTo: { y: top, autoKill: true },
-        ease: 'power3.out'
-      });
+
+    if (window.lenis && typeof window.lenis.scrollTo === 'function') {
+      window.lenis.scrollTo(top);
     } else {
       window.scrollTo({ top, behavior: 'smooth' });
     }
